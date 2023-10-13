@@ -66,11 +66,9 @@ h1 {
 }
 
 .grid-item {
-    /* ... [previous styles] ... */
     display: none; /* Default: hide all grid items */
 }
 
-/* You'll use JavaScript to toggle this class based on filter criteria */
 .grid-item.active {
     display: flex;
 }
