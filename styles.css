@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.container .box {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.slideshow {
+    height: 300px;
+    background-color: #f0f0f0;
+}
+
+.map {
+    height: 300px;
+    background-color: #d0d0d0;
+    background-image: url('path_to_map_image_here');
+    background-size: cover;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.search-filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.search-filter-container input[type="text"],
+.search-filter-container select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.grid-item {
+    /* ... [previous styles] ... */
+    display: none; /* Default: hide all grid items */
+}
+
+/* You'll use JavaScript to toggle this class based on filter criteria */
+.grid-item.active {
+    display: flex;
+}
