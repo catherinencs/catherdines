@@ -18,6 +18,11 @@ gridContainer.innerHTML += `
 `;
 });
 
+function generatePriceSymbols(price) {
+    const priceSymbols = Array(price).fill('$').join('');
+    return priceSymbols;
+}
+
 function getUniqueValues(attribute) {
     const values = grids.map(grid => grid[attribute]);
     return [...new Set(values)];  // This removes duplicates and returns only unique values
