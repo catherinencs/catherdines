@@ -21,7 +21,7 @@ input:focus {
 
 
 button:hover {
-    color: white;
+    color: #F06D4E;
 }
 .container {
     display: flex;
@@ -203,9 +203,16 @@ nav a:hover {
     border-bottom: 1vw solid #EFD9CA;
 }
 
+.reviews h1 {
+    font-size: 2em;
+    margin: 0;
+    color: white;
+}
+
 .reviews p {
     font-size: 2em;
     margin: 0;
+    color: #563110;
 }
 
 .no-results {
@@ -227,7 +234,7 @@ nav a:hover {
     width: 65%;
     margin: 20px auto;
     border: 0.12vw solid black;
-    background-color: #EF938F;
+    background-color: white;
     border-radius: 3rem;
 
 }
@@ -238,6 +245,12 @@ nav a:hover {
     padding: 0rem 0rem 0rem 1rem;
     font-size: 1em;
     background-color: transparent;
+}
+
+input::placeholder {
+    color: #563110; 
+    opacity: 70%;
+    font-style: italic;
 }
 
 /* Filter Featire */
@@ -296,16 +309,18 @@ nav a:hover {
 
 /* Grids (Reviews) */
 .grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     background-color: #F06D4E;
     color: black;
+    justify-content: center;
 }
 
 .grid p {
     margin: 0.5vw;
-    font-size: 1.3vw;
+    font-size: 1.4vw;
 }
 
 .grid h2 {
@@ -319,6 +334,25 @@ nav a:hover {
     text-decoration: none;
 }
 
+.stars {
+    background-color: #F5BC47;
+    color: white;
+    padding: 0.2vw 1vw 0.2vw 1vw;
+    margin-right: 1vw;
+    border-radius: 50px;
+    border: 0.12vw solid #000;
+    font-size: 1.5vw;
+}
+
+.dollars {
+    background-color: rgb(8, 131, 90);
+    color: white;
+    padding: 0.2vw 1vw 0.2vw 1vw;
+    border: 0.12vw solid #000;
+    border-radius: 50px;
+    font-size: 1.5vw;
+}
+
 .grid-item {
     display: none; 
     flex-direction: column;
@@ -326,13 +360,21 @@ nav a:hover {
     border: 0.15vw solid rgb(0, 0, 0);
     align-items: center;
     padding:0;
+    padding-bottom: 1vw;
     width: 30vw;
+    min-width: 300px;
+}
+
+.grid-item:hover {
+    background-color: white;
 }
 
 .grid-item img {
-    padding-top: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
     max-width: 90%;
     height: auto;
+    border: 0.2vw solid #000;
 }
 
 .grid-item.active {

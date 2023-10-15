@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector('.grid');
 
+
 const countryCoordinates = {
     'USA': { left: '40%', top: '30%' },
     'Japan': { left: '88%', top: '39%' },
@@ -52,9 +53,8 @@ function renderGridItems(grids) {
             data-price="${grid.price}">
             <h2>${grid.title}</h2>
             <img src="${grid.imgSrc}" alt="${grid.title}">
-            <p>${grid.rating} | ${grid.price}</p>
-            <p>Location: ${grid.city}, ${grid.country}</p>
-            <p>Cuisine: ${grid.cuisine}</p>
+            <p><span class="stars">${grid.rating}</span><span class="dollars">${grid.price}</span></p>
+            <p>${grid.cuisine} restaurant in ${grid.city}, ${grid.country}</p>
         </div>
     `).join('');
     gridContainer.innerHTML = gridItemsHTML;
