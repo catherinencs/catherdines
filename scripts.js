@@ -20,6 +20,19 @@ fetch('data.json')
 
         gridContainer.innerHTML = gridItemsHTML;
 
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
         function matchesFilter(item, attribute, value) {
             if (!value) return true;
             return item.getAttribute(`data-${attribute}`) === value;
@@ -90,8 +103,16 @@ fetch('data.json')
         const countryOptionCount = countryFilter.querySelectorAll('option').length - 1;
 
         // Update the text right above the search bar
-        const reviewText = document.querySelector('.search-filter-container').previousElementSibling.querySelector('p');
-        reviewText.textContent = `${gridItemCount} reviews across ${countryOptionCount} countries`;
+        const reviewCountElement = document.getElementById('review-count');
+        const countryCountElement = document.getElementById('country-count');
+        
+        reviewCountElement.textContent = gridItemCount;
+        countryCountElement.textContent = countryOptionCount;
+        
+         // Animate numbers
+         animateValue(reviewCountElement, 0, gridItemCount, 500); 
+         animateValue(countryCountElement, 0, countryOptionCount, 500);
+ 
 
         // Attach event listeners to filters and search input
         countryFilter.addEventListener('change', filterGridItems);
@@ -105,3 +126,26 @@ fetch('data.json')
     .catch(error => {
         console.error("Failed to fetch data:", error);
     });
+
+    document.getElementById('avatar').addEventListener('mouseover', function() {
+        this.setAttribute('fill', 'url(#img2)');
+    });
+    
+    document.getElementById('avatar').addEventListener('mouseout', function() {
+        this.setAttribute('fill', 'url(#img1)');
+    });
+
+    document.querySelectorAll('.marker').forEach(marker => {
+        marker.addEventListener('mouseover', function() {
+            // Show tooltip on mouseover
+            let tooltip = this.querySelector('.tooltip');
+            tooltip.style.display = 'block';
+        });
+    
+        marker.addEventListener('mouseout', function() {
+            // Hide tooltip on mouseout
+            let tooltip = this.querySelector('.tooltip');
+            tooltip.style.display = 'none';
+        });
+    });
+    

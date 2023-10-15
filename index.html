@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#suggestions">Suggestions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <div class="introduction">
     <h1>CATHERDINES</h1>
 
@@ -14,29 +22,56 @@
     <div class="container">
         <div class="box">
             <div class="rectangle">
-                <p>hi, i’m catherine! welcome to my food diary <3 i consume anything & everything. except coffee.
+                <p>hi, i’m catherine! ♡<br><br>welcome to my food diary! i consume anything & everything.<br><br>except coffee.
                 </p>
             </div>
         </div>
+
+        <svg width="25%" height="25%" viewBox="0 0 100 100">
+            <defs>
+                <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image href="avatar.png" x="0" y="0" width="100" height="100"></image>
+                </pattern>
+                <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
+                    <image href="avatar-hover.png" x="0" y="0" width="100" height="100"></image>
+                </pattern>
+            </defs>
+            <circle cx="50" cy="50" r="50" fill="url(#img1)" id="avatar"></circle>
+        </svg>
+        
+        
         <div class="box">
-            <img src="avatar.png" alt="Avatar Logo">
-        </div>
-        <div class="box">
-            <p class="right-aligned">some of my fave foods include: martabak manis, bitterballen, nasi tumpeng, sushi, babi guling, & chicken tikka massala 
+            <p class="right-aligned">some of my fave foods include:<br><br>martabak manis, bitterballen, nasi tumpeng, sushi, babi guling & chicken tikka massala 
             </p>
         </div>
     </div>
 
 
     <div class="container">
-        <div class="box map"></div>
+        <div class="map-container">
+            <img src="worldmap.png" alt="World Map" class="map">
+            <div class="marker" style="left: 50%; top: 30%;">
+                <div class="tooltip" style="display:none;">
+                    <p>Country1</p>
+                    <p>Reviews: 10</p>
+                </div>
+            </div>
+            <div class="marker" style="left: 70%; top: 40%;">
+                <div class="tooltip" style="display:none;">
+                    <p>Country2</p>
+                    <p>Reviews: 5</p>
+                </div>
+            </div>
+            <!-- More markers... -->
+        </div>
+        
         <div class="box">
-            <p>_____ reviews across _____ countries</p>
+            <p id="big"><span class="big-num" id="review-count">_____</span> reviews <br> across <span class="big-num" id="country-count">_____</span> countries</p>
         </div>
     </div>
 
 <!-- Search and filter section -->
-<div class="search-filter-container">
+<div class="search-filter-container" id="reviews">
     <input type="text" id="search" placeholder="Search...">
 </div>
 
