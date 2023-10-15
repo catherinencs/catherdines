@@ -7,7 +7,8 @@
         "city": "New York",
         "country": "USA",
         "cuisine": "Italian",
-        "ratingNum": "5"
+        "ratingNum": "5",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
         "title": "Title 2",

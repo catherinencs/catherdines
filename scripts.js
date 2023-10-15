@@ -7,216 +7,297 @@ const countryCoordinates = {
     'Singapore': { left: '81.1%', top: '56.5%' }
 };
 
-// Fetch data from the JSON file and then execute the logic
-fetch('data.json')
-    .then(response => response.json())
-    .then(grids => { 
-        let gridItemsHTML = "";
-
-        grids.forEach(grid => {
-            gridItemsHTML += `
-            <div class="grid-item" data-country="${grid.country}" data-cuisine="${grid.cuisine}" data-rating="${grid.ratingNum}" data-price="${grid.price}">
-
-                    <h2>${grid.title}</h2>
-                    <img src="${grid.imgSrc}" alt="${grid.title}">
-                    <p>${grid.rating} | ${grid.price}</p>
-                    <p>Location: ${grid.city}, ${grid.country}</p>
-                    <p>Cuisine: ${grid.cuisine}</p>
-                </div>
-            `;
+/**
+ * Fetches grid data from the JSON file and processes the data.
+ */
+function fetchGridData() {
+    fetch('data.json')
+        .then(response => response.json())
+        .then(processGridData)
+        .catch(error => {
+            console.error("Failed to fetch data:", error);
         });
+}
 
-        gridContainer.innerHTML = gridItemsHTML;
+/**
+ * Processes and renders grid data.
+ * @param {Array} grids - Array of grid data objects.
+ */
+function processGridData(grids) {
+    renderGridItems(grids);
+    setupModalInteractions();
+    setupMapMarkers(grids);
+    setupFiltersAndSearch(grids);
+    setupAvatarHoverEffect();
 
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.textContent = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
+    // Update the review count and country count
+    const reviewCount = grids.length;
+    const countryCount = getUniqueValues(grids, 'country').length;
+
+    // Animate the counts
+    animateValue(document.getElementById('review-count'), 0, reviewCount, 500);
+    animateValue(document.getElementById('country-count'), 0, countryCount, 500);
+}
+
+/**
+ * Renders grid items.
+ * @param {Array} grids - Array of grid data objects.
+ */
+function renderGridItems(grids) {
+    const gridItemsHTML = grids.map(grid => `
+        <div class="grid-item" 
+            data-country="${grid.country}" 
+            data-cuisine="${grid.cuisine}" 
+            data-rating="${grid.ratingNum}" 
+            data-price="${grid.price}">
+            <h2>${grid.title}</h2>
+            <img src="${grid.imgSrc}" alt="${grid.title}">
+            <p>${grid.rating} | ${grid.price}</p>
+            <p>Location: ${grid.city}, ${grid.country}</p>
+            <p>Cuisine: ${grid.cuisine}</p>
+        </div>
+    `).join('');
+    gridContainer.innerHTML = gridItemsHTML;
+}
+
+/**
+ * Sets up modal interactions.
+ */
+function setupModalInteractions() {
+    const modal = document.getElementById("myModal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalImg = document.getElementById("modal-img");
+    const modalReview = document.getElementById("modal-review");
+    const closeModalBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".grid-item").forEach(item => {
+        item.addEventListener('click', function() {
+            modalTitle.textContent = this.querySelector('h2').textContent;
+            modalImg.src = this.querySelector('img').src;
+            modalImg.alt = this.querySelector('img').alt;
+            modalReview.textContent = this.getAttribute("review");
+            modal.style.display = "block";
+        });
+    });
+
+    closeModalBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+}
+
+/**
+ * Sets up the map markers based on the provided grid data.
+ * @param {Array} grids - Array of grid data objects.
+ */
+function setupMapMarkers(grids) {
+    const mapContainer = document.querySelector('.map-container');
+    const countryReviewCounts = getCountryReviewCounts(grids);
+
+    for (const country in countryReviewCounts) {
+        if (countryCoordinates[country]) {
+            const marker = createMarker(country, countryReviewCounts[country]);
+            mapContainer.appendChild(marker);
+        }
+    }
+}
+
+/**
+ * Creates a marker element with tooltip for the given country and review count.
+ * @param {string} country - Country name.
+ * @param {number} count - Review count.
+ * @returns {Element} - The marker element.
+ */
+function createMarker(country, count) {
+    const marker = document.createElement('div');
+    marker.classList.add('marker');
+    marker.style.left = countryCoordinates[country].left;
+    marker.style.top = countryCoordinates[country].top;
+
+    const tooltip = createTooltip(country, count);
+    marker.appendChild(tooltip);
+
+    marker.addEventListener('mouseover', () => tooltip.style.display = 'block');
+    marker.addEventListener('mouseout', () => tooltip.style.display = 'none');
+
+    return marker;
+}
+
+/**
+ * Creates a tooltip element for the given country and review count.
+ * @param {string} country - Country name.
+ * @param {number} count - Review count.
+ * @returns {Element} - The tooltip element.
+ */
+function createTooltip(country, count) {
+    const tooltip = document.createElement('div');
+    tooltip.classList.add('tooltip');
+    tooltip.style.display = 'none';
+    tooltip.innerHTML = `<p id="tooltip">${country}</p><p id="tooltip">Reviews: ${count}</p>`;
+    return tooltip;
+}
+
+/**
+ * Generates a summary of reviews per country from the given grid data.
+ * @param {Array} grids - Array of grid data objects.
+ * @returns {Object} - An object containing review counts per country.
+ */
+function getCountryReviewCounts(grids) {
+    const counts = {};
+    grids.forEach(grid => {
+        if (!counts[grid.country]) {
+            counts[grid.country] = 0;
+        }
+        counts[grid.country]++;
+    });
+    return counts;
+}
+
+/**
+ * Sets up filters and search functionality.
+ * @param {Array} grids - Array of grid data objects.
+ */
+function setupFiltersAndSearch(grids) {
+    const countryFilter = document.getElementById('country-filter');
+    const cuisineFilter = document.getElementById('cuisine-filter');
+    const ratingFilter = document.getElementById('rating-filter');
+    const priceFilter = document.getElementById('price-filter');
+    const searchInput = document.getElementById('search');
+    const searchButton = document.getElementById('search-btn');
+
+    populateOptions(countryFilter, getUniqueValues(grids, 'country'));
+    populateOptions(cuisineFilter, getUniqueValues(grids, 'cuisine'));
+    populateOptions(ratingFilter, getUniqueValues(grids, 'ratingNum'));
+    populateOptions(priceFilter, getUniqueValues(grids, 'price'));
+
+    const eventListeners = ['change', 'keydown', 'click'];
+    [countryFilter, cuisineFilter, ratingFilter, priceFilter, searchInput, searchButton].forEach((element, index) => {
+        element.addEventListener(eventListeners[index < 5 ? 0 : index - 4], filterGridItems);
+    });
+
+    document.getElementById('clear-filters').addEventListener('click', function() {
+        countryFilter.selectedIndex = 0;
+        cuisineFilter.selectedIndex = 0;
+        ratingFilter.selectedIndex = 0;
+        priceFilter.selectedIndex = 0;
+        filterGridItems();
+    });
+
+    filterGridItems();  // Call once to show all items initially
+}
+
+/**
+ * Populates the given filter element with the provided values.
+ * @param {Element} filterElement - The filter dropdown element.
+ * @param {Array} valuesArray - Array of values to populate the filter with.
+ */
+function populateOptions(filterElement, valuesArray) {
+    valuesArray.forEach(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        filterElement.appendChild(option);
+    });
+}
+
+/**
+ * Retrieves unique values for the given attribute from the grid data.
+ * @param {Array} grids - Array of grid data objects.
+ * @param {string} attribute - The attribute to retrieve unique values for.
+ * @returns {Array} - Array of unique values.
+ */
+function getUniqueValues(grids, attribute) {
+    const values = grids.map(grid => grid[attribute]);
+    return [...new Set(values)];
+}
+
+/**
+ * Animates a numeric value of an element from the start value to the end value over a given duration.
+ * @param {Element} element - The DOM element whose value needs to be animated.
+ * @param {number} start - The start value.
+ * @param {number} end - The end value.
+ * @param {number} duration - The duration of the animation in milliseconds.
+ */
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.textContent = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
             window.requestAnimationFrame(step);
         }
-        
-        function matchesFilter(item, attribute, value) {
-            if (!value) return true;
-            return item.getAttribute(`data-${attribute}`) === value;
+    };
+    window.requestAnimationFrame(step);
+}
+
+/**
+ * Checks if a grid item matches the given filter criteria.
+ * @param {Element} item - The grid item element.
+ * @param {string} attribute - The data attribute to check.
+ * @param {string} value - The filter value to match against.
+ * @returns {boolean} - True if the item matches the filter, false otherwise.
+ */
+function matchesFilter(item, attribute, value) {
+    if (!value) return true;
+    return item.getAttribute(`data-${attribute}`) === value;
+}
+
+/**
+ * Filters the grid items based on the selected filter values and search term.
+ */
+function filterGridItems() {
+    const country = document.getElementById('country-filter').value;
+    const cuisine = document.getElementById('cuisine-filter').value;
+    const rating = document.getElementById('rating-filter').value;
+    const price = document.getElementById('price-filter').value;
+    const searchTerm = document.getElementById('search').value.toLowerCase();
+
+    const gridItems = document.querySelectorAll('.grid-item');
+    let hasActiveItems = false;
+
+    gridItems.forEach(item => {
+        const itemTitle = item.querySelector('h2').textContent.toLowerCase();
+        const matchesSearch = !searchTerm || itemTitle.includes(searchTerm);
+
+        if (matchesFilter(item, 'country', country) && 
+            matchesFilter(item, 'cuisine', cuisine) && 
+            matchesFilter(item, 'rating', rating) && 
+            matchesFilter(item, 'price', price) &&
+            matchesSearch) {
+                item.classList.add('active');
+                hasActiveItems = true;
+        } else {
+            item.classList.remove('active');
         }
-
-        function filterGridItems() {
-            const country = countryFilter.value;
-            const cuisine = cuisineFilter.value;
-            const rating = ratingFilter.value;
-            const price = priceFilter.value;
-            const searchTerm = searchInput.value.toLowerCase();
-
-            const gridItems = document.querySelectorAll('.grid-item');
-            let hasActiveItems = false;  // Add this line to keep track of active items
-
-
-            if (!country && !cuisine && !rating && !price && !searchTerm) {
-                gridItems.forEach(item => {
-                    item.classList.add('active');
-                });
-                return;
-            }
-
-            gridItems.forEach(item => {
-                const itemTitle = item.querySelector('h2').textContent.toLowerCase();
-                const matchesSearch = !searchTerm || itemTitle.includes(searchTerm);
-
-                if (matchesFilter(item, 'country', country) && 
-                    matchesFilter(item, 'cuisine', cuisine) && 
-                    matchesFilter(item, 'rating', rating) && 
-                    matchesFilter(item, 'price', price) &&
-                    matchesSearch) {
-                        item.classList.add('active');
-                        hasActiveItems = true;
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-
-            const noResultsMessage = document.querySelector('.no-results');
-            
-    if (hasActiveItems) {
-        noResultsMessage.style.display = "none";
-    } else {
-        noResultsMessage.style.display = "block";
-    }
-        }
-
-        const countryFilter = document.getElementById('country-filter');
-        const cuisineFilter = document.getElementById('cuisine-filter');
-        const ratingFilter = document.getElementById('rating-filter');
-        const priceFilter = document.getElementById('price-filter');
-
-        const uniqueCountries = getUniqueValues('country');
-        const uniqueCuisines = getUniqueValues('cuisine');
-        const uniqueRatings = getUniqueValues('ratingNum');
-        const uniquePrices = getUniqueValues('price');
-
-        function populateOptions(filterElement, valuesArray) {
-            valuesArray.forEach(value => {
-                const option = document.createElement('option');
-                option.value = value;
-                option.textContent = value;
-                filterElement.appendChild(option);
-            });
-        }
-
-        populateOptions(countryFilter, uniqueCountries);
-        populateOptions(cuisineFilter, uniqueCuisines);
-        populateOptions(ratingFilter, uniqueRatings);
-        populateOptions(priceFilter, uniquePrices);
-
-        function getUniqueValues(attribute) {
-            const values = grids.map(grid => grid[attribute]);
-            return [...new Set(values)];
-        }
-
-        const searchInput = document.getElementById('search');
-        const searchButton = document.getElementById('search-btn'); // Get the new search button
-
-
-        // Count the number of grid items
-        const gridItemCount = document.querySelectorAll('.grid-item').length;
-
-        // Count the number of country options (subtract 1 for the default "Filter by Country" option)
-        const countryOptionCount = countryFilter.querySelectorAll('option').length - 1;
-
-        // Update the text right above the search bar
-        const reviewCountElement = document.getElementById('review-count');
-        const countryCountElement = document.getElementById('country-count');
-        
-        reviewCountElement.textContent = gridItemCount;
-        countryCountElement.textContent = countryOptionCount;
-        
-         // Animate numbers
-         animateValue(reviewCountElement, 0, gridItemCount, 500); 
-         animateValue(countryCountElement, 0, countryOptionCount, 500);
- 
-
-        // Attach event listeners to filters and search input
-        countryFilter.addEventListener('change', filterGridItems);
-        cuisineFilter.addEventListener('change', filterGridItems);
-        ratingFilter.addEventListener('change', filterGridItems);
-        priceFilter.addEventListener('change', filterGridItems);
-        searchInput.addEventListener('keydown', function(event) {
-            if (event.keyCode === 13) { // 13 is the keycode for Enter
-                filterGridItems();
-            }
-        });
-        
-        // Add an event listener to the search button to activate the search
-        searchButton.addEventListener('click', filterGridItems);
-
-        // Call once to show all items initially
-        filterGridItems();
-        const mapContainer = document.querySelector('.map-container');
-        
-        // Create an object to hold counts of reviews per country
-        const countryReviewCounts = {};
-
-        grids.forEach(grid => {
-            if (!countryReviewCounts[grid.country]) {
-                countryReviewCounts[grid.country] = 0;
-            }
-            countryReviewCounts[grid.country]++;
-        });
-
-        // For each unique country, create a marker
-        for (const country in countryReviewCounts) {
-            if (countryCoordinates[country]) {
-                const marker = document.createElement('div');
-                marker.classList.add('marker');
-                marker.style.left = countryCoordinates[country].left;
-                marker.style.top = countryCoordinates[country].top;
-                
-                const tooltip = document.createElement('div');
-                tooltip.classList.add('tooltip');
-                tooltip.style.display = 'none';
-                tooltip.innerHTML = `<p id="tooltip">${country}</p><p id="tooltip">Reviews: ${countryReviewCounts[country]}</p>`;
-                
-                marker.appendChild(tooltip);
-                mapContainer.appendChild(marker);
-                
-                marker.addEventListener('mouseover', function() {
-                    tooltip.style.display = 'block';
-                });
-                marker.addEventListener('mouseout', function() {
-                    tooltip.style.display = 'none';
-                });
-            }
-        }
-    })
-    .catch(error => {
-        console.error("Failed to fetch data:", error);
     });
 
-    document.getElementById('avatar').addEventListener('mouseover', function() {
+    toggleNoResultsMessage(hasActiveItems);
+}
+
+/**
+ * Toggles the display of the "No Results" message based on whether there are active grid items.
+ * @param {boolean} hasActiveItems - True if there are active grid items, false otherwise.
+ */
+function toggleNoResultsMessage(hasActiveItems) {
+    const noResultsMessage = document.querySelector('.no-results');
+    noResultsMessage.style.display = hasActiveItems ? "none" : "block";
+}
+
+/**
+ * Sets up hover effect for the avatar.
+ */
+function setupAvatarHoverEffect() {
+    const avatar = document.getElementById('avatar');
+    avatar.addEventListener('mouseover', function() {
         this.setAttribute('fill', 'url(#img2)');
     });
-    
-    document.getElementById('avatar').addEventListener('mouseout', function() {
+    avatar.addEventListener('mouseout', function() {
         this.setAttribute('fill', 'url(#img1)');
     });
+}
 
-    document.querySelectorAll('.marker').forEach(marker => {
-        marker.addEventListener('mouseover', function() {
-            // Show tooltip on mouseover
-            let tooltip = this.querySelector('.tooltip');
-            tooltip.style.display = 'block';
-        });
-    
-        marker.addEventListener('mouseout', function() {
-            // Hide tooltip on mouseout
-            let tooltip = this.querySelector('.tooltip');
-            tooltip.style.display = 'none';
-        });
-    });
-    
- 
+// Call the main function to start the process.
+fetchGridData();

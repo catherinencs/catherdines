@@ -47,19 +47,24 @@
             <img src="worldmapv2.png" alt="World Map" class="map">
         </div>        
         <div class="box">
-            <p id="big"><span class="big-num" id="review-count">_</span> reviews <br> across <span class="big-num" id="country-count">_</span> countries</p>
+            <p id="review">
+                <span class="big-num" id="review-count">0</span> reviews <br> across <span class="big-num" id="country-count">0</span> countries
+            </p>
         </div>
     </div>
     </div>
 
 <!-- Reviews section -->
 <div class="reviews" id="reviews">
-    <p>join me on a culinary adventure!<p>
+    <p>join me on a culinary adventure!</p>
+    
     <div class="search-container">
         <input type="text" id="search" placeholder="Search...">
-       <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        
         <div class="filter-dropdown">
             <button id="filter-button"><i class="fa-solid fa-filter"></i> filter</button>
+            
             <div class="filter-options">
                 <select name="country" id="country-filter">
                     <option value="">Country</option>
@@ -73,15 +78,25 @@
                 <select name="price" id="price-filter">
                     <option value="">Price</option>
                 </select>
+                <button id="clear-filters">Clear Filters</button>
             </div>
         </div>
-    </div> 
+    </div>
+
+    <div class="grid"></div>
+    <div class="no-results">that's uncharted territory on our food map!<br><i class="fa-solid fa-map-location-dot"></i><br>try another spot.</div>
 </div>
 
+<!-- This is your modal structure -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-img" src="" alt="">
+        <p id="modal-review"></p>
+    </div>
+</div>
 
-
-<div class="grid"></div>
-<div class="no-results">that's uncharted territory on our food map!<br><i class="fa-solid fa-map-location-dot"></i><br>try another spot.</div>
 
 <script src="scripts.js"></script>
 

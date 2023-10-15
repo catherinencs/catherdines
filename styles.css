@@ -6,6 +6,23 @@ body {
     background-color: #EFD9CA;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    padding: 0rem;
+    color:#563110;
+    transition: color 0.2s;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+button:hover {
+    color: white;
+}
 .container {
     display: flex;
     justify-content: space-between;
@@ -51,13 +68,13 @@ nav a:hover {
     color: #F06D4E; 
 }
 
-/* Introduction Section */
+/* INTRODUCTION SECTION */
 .introduction {
     padding-top: 3rem;
     background-color: rgb(8, 131, 90);
     color: rgb(205, 232, 217);
     border-bottom: 1vw solid #EFD9CA;
-    padding-bottom: 3vw;
+    padding-bottom: 4rem;
 
 }
 
@@ -81,7 +98,7 @@ nav a:hover {
     padding: 0vw 3.5vw 2vw 9vw;
 }
 
-#big {
+#review {
     text-align: center;
     padding: 0vw 8vw 1vw 0vw;
     font-size: 3vw;
@@ -174,45 +191,21 @@ nav a:hover {
     padding: 0vw;
 }
 
-/* Reviews Section */
+/* REVIEWS SECTION */
 .reviews {
-    padding-top: 5vw;
     display: flex;
     flex-direction: column; 
     align-items: center;
     text-align: center; 
     background-color: #F06D4E;
     color: #EAD3C3;
+    padding: 4rem 2rem 4rem 2rem;
+    border-bottom: 1vw solid #EFD9CA;
 }
 
 .reviews p {
-    font-size: 3vw;
+    font-size: 2em;
     margin: 0;
-}
-
-#search {
-    width: 100%;
-    height: 2vw;
-    background-color: #EF938F;
-    border: 0.15vw solid black;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 80%;
-    margin: 20px auto;
-    border: 0.15vw solid black;
-    background-color: #EF938F;
-}
-
-#search {
-    flex: 1;
-    border: none;
-    padding: 10px;
-    font-size: 1em;
-    background-color: transparent;
 }
 
 .no-results {
@@ -221,19 +214,44 @@ nav a:hover {
     display: none; /* Initially hidden */
     color: black;
     background-color: #F06D4E;
-    padding: 1rem;
+    padding-top: 2rem;
+}
+
+/* Search Bar */
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 65%;
+    margin: 20px auto;
+    border: 0.12vw solid black;
+    background-color: #EF938F;
+    border-radius: 3rem;
+
+}
+
+#search {
+    flex: 1;
+    border: none;
+    padding: 0rem 0rem 0rem 1rem;
+    font-size: 1em;
+    background-color: transparent;
 }
 
 /* Filter Featire */
 #filter-button {
-    background-color: #6e3a18;
-    border: none;
+    background-color: #F5BD47;
+    border: 0.12vw solid black;
     padding: 5px 10px;
     margin: 10px;
     font-size: 1em;
+    color: #563110;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
     outline: none;
+    border-radius: 3rem;
 }
 
 #filter-button:hover {
@@ -276,14 +294,11 @@ nav a:hover {
     background-color: #EFD9CA;
 }
 
-
-
 /* Grids (Reviews) */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding: 20px;
     background-color: #F06D4E;
     color: black;
 }
@@ -311,6 +326,7 @@ nav a:hover {
     border: 0.15vw solid rgb(0, 0, 0);
     align-items: center;
     padding:0;
+    width: 30vw;
 }
 
 .grid-item img {
@@ -337,3 +353,39 @@ nav a:hover {
     padding: 20px 0;
 }
 
+
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
