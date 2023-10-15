@@ -4,26 +4,16 @@ body {
     padding: 0;
 }
 
-h1 {
-    text-align: center;
-    padding: 20px;
-    font-size: 150px;
-}
 
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px;
 }
 
 .container .box {
     flex: 1;
-    margin: 0 10px;
-}
-
-.slideshow {
-    height: 300px;
-    background-color: #f0f0f0;
+    margin: 0 40px;
 }
 
 .map {
@@ -38,6 +28,8 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     padding: 20px;
+    background-color: red;
+    color: yellow;
 }
 
 .grid-item {
@@ -53,17 +45,19 @@ h1 {
 
 .search-filter-container {
     display: flex;
-    flex-direction: column; /* Change the direction to column */
-    align-items: center; /* Center align items horizontally */
+    flex-direction: column; 
+    align-items: center;
     padding: 20px;
-    text-align: center; /* Center align text */
+    text-align: center; 
+    background-color: red;
+    color: yellow;
 }
 
 .search-filter-container input[type="text"] {
-    width: 100%; /* Make the search bar full-width */
-    max-width: 800px; /* Set a maximum width for the search bar */
+    width: 100%; 
+    max-width: 800px; 
     padding: 10px;
-    margin-bottom: 10px; /* Add some spacing between the search bar and filters */
+    margin-bottom: 10px; 
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -71,22 +65,79 @@ h1 {
 /* Style for the filter row */
 .filter-row {
     display: flex;
-    justify-content: center; /* Center align items horizontally in the row */
-    align-items: center; /* Center align items vertically in the row */
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    background-color: red;
+    color: yellow;
 }
 
 .filter-row select {
-    max-width: 800px; /* Set a maximum width for the filter dropdowns */
+    max-width: 800px;
     padding: 10px;
-    margin-right: 10px; /* Add some spacing between filter dropdowns */
+    margin-right: 10px; 
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .grid-item {
-    display: none; /* Default: hide all grid items */
+    display: none; 
 }
 
 .grid-item.active {
     display: flex;
+}
+
+/* Introduction Section */
+.introduction {
+    background-color: rgb(8, 131, 90);
+    color: rgb(205, 232, 217);
+    padding: 20px 0;
+}
+
+.introduction h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 120px;
+    margin: 0; 
+    padding: 0px 0;
+}
+
+.introduction p {
+    text-align: left;
+    padding: 50px;
+    font-size: 30px;
+}
+
+.introduction p.right-aligned {
+    text-align: right;
+    padding: 50px;
+    font-size: 30px;
+}
+
+/* Search, Filter and Grid Section */
+.search-and-filter {
+    background-color: RGB(240, 109, 78);
+    color: yellow;
+    padding: 20px 0;
+}
+
+/* Suggestions Section */
+.suggestions {
+    background-color: yellow;
+    color: black;
+    padding: 20px 0;
+}
+
+/* Contact Section */
+.contact {
+    background-color: pink;
+    color: blue;
+    padding: 20px 0;
+}
+
+img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
 }
