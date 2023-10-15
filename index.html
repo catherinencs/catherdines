@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATHERDINES</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <nav>
@@ -54,24 +55,33 @@
 <!-- Reviews section -->
 <div class="reviews" id="reviews">
     <p>join me on a culinary adventure!<p>
-    <input type="text" id="search" placeholder="Search...">
-
-    <select name="country" id="country-filter">
-        <option value="">Filter by Country</option>
-    </select>
-    <select name="cuisine" id="cuisine-filter">
-        <option value="">Filter by Cuisine</option>
-    </select>
-    <select name="rating" id="rating-filter">
-        <option value="">Filter by Rating</option>
-    </select>
-    <select name="price" id="price-filter">
-        <option value="">Filter by Price</option>
-    </select>
-      
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search...">
+       <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="filter-dropdown">
+            <button id="filter-button"><i class="fa-solid fa-filter"></i> filter</button>
+            <div class="filter-options">
+                <select name="country" id="country-filter">
+                    <option value="">Country</option>
+                </select>
+                <select name="cuisine" id="cuisine-filter">
+                    <option value="">Cuisine</option>
+                </select>
+                <select name="rating" id="rating-filter">
+                    <option value="">Rating</option>
+                </select>
+                <select name="price" id="price-filter">
+                    <option value="">Price</option>
+                </select>
+            </div>
+        </div>
+    </div> 
 </div>
 
+
+
 <div class="grid"></div>
+<div class="no-results">that's uncharted territory on our food map!<br><i class="fa-solid fa-map-location-dot"></i><br>try another spot.</div>
 
 <script src="scripts.js"></script>
 

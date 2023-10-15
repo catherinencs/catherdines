@@ -3,7 +3,8 @@ const gridContainer = document.querySelector('.grid');
 const countryCoordinates = {
     'USA': { left: '40%', top: '30%' },
     'Japan': { left: '88%', top: '39%' },
-    'Indonesia': { left: '83%', top: '58%' }
+    'Indonesia': { left: '85%', top: '58%' },
+    'Singapore': { left: '81.1%', top: '56.5%' }
 };
 
 // Fetch data from the JSON file and then execute the logic
@@ -53,6 +54,8 @@ fetch('data.json')
             const searchTerm = searchInput.value.toLowerCase();
 
             const gridItems = document.querySelectorAll('.grid-item');
+            let hasActiveItems = false;  // Add this line to keep track of active items
+
 
             if (!country && !cuisine && !rating && !price && !searchTerm) {
                 gridItems.forEach(item => {
@@ -71,10 +74,19 @@ fetch('data.json')
                     matchesFilter(item, 'price', price) &&
                     matchesSearch) {
                         item.classList.add('active');
+                        hasActiveItems = true;
                 } else {
                     item.classList.remove('active');
                 }
             });
+
+            const noResultsMessage = document.querySelector('.no-results');
+            
+    if (hasActiveItems) {
+        noResultsMessage.style.display = "none";
+    } else {
+        noResultsMessage.style.display = "block";
+    }
         }
 
         const countryFilter = document.getElementById('country-filter');
@@ -107,6 +119,8 @@ fetch('data.json')
         }
 
         const searchInput = document.getElementById('search');
+        const searchButton = document.getElementById('search-btn'); // Get the new search button
+
 
         // Count the number of grid items
         const gridItemCount = document.querySelectorAll('.grid-item').length;
@@ -131,7 +145,14 @@ fetch('data.json')
         cuisineFilter.addEventListener('change', filterGridItems);
         ratingFilter.addEventListener('change', filterGridItems);
         priceFilter.addEventListener('change', filterGridItems);
-        searchInput.addEventListener('input', filterGridItems);
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) { // 13 is the keycode for Enter
+                filterGridItems();
+            }
+        });
+        
+        // Add an event listener to the search button to activate the search
+        searchButton.addEventListener('click', filterGridItems);
 
         // Call once to show all items initially
         filterGridItems();

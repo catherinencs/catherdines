@@ -12,7 +12,7 @@
     {
         "title": "Title 2",
         "rating": "★★★★☆",
-        "price": "$$",
+        "price": "$ $",
         "imgSrc": "path_to_image_2",
         "city": "Tokyo",
         "country": "Japan",
@@ -36,6 +36,16 @@
         "imgSrc": "path_to_image_2",
         "city": "Jakarta",
         "country": "Indonesia",
+        "cuisine": "Chinese",
+        "ratingNum": "3"
+    },
+    {
+        "title": "Hehe Hi",
+        "rating": "★★★☆☆",
+        "price": "$$$",
+        "imgSrc": "path_to_image_2",
+        "city": "Singapore",
+        "country": "Singapore",
         "cuisine": "Chinese",
         "ratingNum": "3"
     }

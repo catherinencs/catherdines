@@ -1,5 +1,5 @@
 body {
-    padding-top: 50px;
+    padding-top: 10px;
     font-family: futura, sans-serif;
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@ nav a {
     text-align: center; 
     padding: 1vw 5vw; 
     text-decoration: none; 
-    font-size: 1.2vw;
+    font-size: 1em;
 }
 
 nav a:hover {
@@ -53,7 +53,7 @@ nav a:hover {
 
 /* Introduction Section */
 .introduction {
-    padding-top: 3.5vw;
+    padding-top: 3rem;
     background-color: rgb(8, 131, 90);
     color: rgb(205, 232, 217);
     border-bottom: 1vw solid #EFD9CA;
@@ -197,6 +197,85 @@ nav a:hover {
     border: 0.15vw solid black;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+    border: 0.15vw solid black;
+    background-color: #EF938F;
+}
+
+#search {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    background-color: transparent;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 2vw;
+    display: none; /* Initially hidden */
+    color: black;
+    background-color: #F06D4E;
+    padding: 1rem;
+}
+
+/* Filter Featire */
+#filter-button {
+    background-color: #6e3a18;
+    border: none;
+    padding: 5px 10px;
+    margin: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+#filter-button:hover {
+    background-color: #EFD9CA;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-dropdown:hover .filter-options {
+    display: flex;
+}
+
+.filter-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #EFD9CA;
+    border: 0.15vw solid black;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.filter-options select {
+    margin: 5px;
+    background-color: #EF938F;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-options select:hover {
+    background-color: #EFD9CA;
+}
+
 
 
 /* Grids (Reviews) */
@@ -257,3 +336,4 @@ nav a:hover {
     color: blue;
     padding: 20px 0;
 }
+
