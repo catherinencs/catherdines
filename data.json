@@ -1,8 +1,9 @@
 [
     {
-        "title": "Title 1",
+        "title": "The Bridge",
         "rating": "★★★★★",
-        "imgSrc": "test.jpeg",
+        "price": "$$$",
+        "imgSrc": "lobster.png",
         "city": "New York",
         "country": "USA",
         "cuisine": "Italian",
@@ -11,6 +12,7 @@
     {
         "title": "Title 2",
         "rating": "★★★★☆",
+        "price": "$$",
         "imgSrc": "path_to_image_2",
         "city": "Tokyo",
         "country": "Japan",
@@ -20,6 +22,7 @@
     {
         "title": "Hehe Hi",
         "rating": "★★★☆☆",
+        "price": "$$$",
         "imgSrc": "path_to_image_2",
         "city": "Jakarta",
         "country": "Indonesia",
@@ -29,6 +32,7 @@
     {
         "title": "Hehe Hi",
         "rating": "★★★☆☆",
+        "price": "$$$",
         "imgSrc": "path_to_image_2",
         "city": "Jakarta",
         "country": "Indonesia",

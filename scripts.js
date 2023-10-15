@@ -9,15 +9,16 @@ const countryCoordinates = {
 // Fetch data from the JSON file and then execute the logic
 fetch('data.json')
     .then(response => response.json())
-    .then(grids => {
+    .then(grids => { 
         let gridItemsHTML = "";
 
         grids.forEach(grid => {
             gridItemsHTML += `
-                <div class="grid-item" data-country="${grid.country}" data-cuisine="${grid.cuisine}" data-rating="${grid.ratingNum}">
+            <div class="grid-item" data-country="${grid.country}" data-cuisine="${grid.cuisine}" data-rating="${grid.ratingNum}" data-price="${grid.price}">
+
                     <h2>${grid.title}</h2>
-                    <p>Rating: ${grid.rating}</p>
                     <img src="${grid.imgSrc}" alt="${grid.title}">
+                    <p>${grid.rating} | ${grid.price}</p>
                     <p>Location: ${grid.city}, ${grid.country}</p>
                     <p>Cuisine: ${grid.cuisine}</p>
                 </div>
@@ -48,11 +49,12 @@ fetch('data.json')
             const country = countryFilter.value;
             const cuisine = cuisineFilter.value;
             const rating = ratingFilter.value;
+            const price = priceFilter.value;
             const searchTerm = searchInput.value.toLowerCase();
 
             const gridItems = document.querySelectorAll('.grid-item');
 
-            if (!country && !cuisine && !rating && !searchTerm) {
+            if (!country && !cuisine && !rating && !price && !searchTerm) {
                 gridItems.forEach(item => {
                     item.classList.add('active');
                 });
@@ -66,6 +68,7 @@ fetch('data.json')
                 if (matchesFilter(item, 'country', country) && 
                     matchesFilter(item, 'cuisine', cuisine) && 
                     matchesFilter(item, 'rating', rating) && 
+                    matchesFilter(item, 'price', price) &&
                     matchesSearch) {
                         item.classList.add('active');
                 } else {
@@ -77,10 +80,12 @@ fetch('data.json')
         const countryFilter = document.getElementById('country-filter');
         const cuisineFilter = document.getElementById('cuisine-filter');
         const ratingFilter = document.getElementById('rating-filter');
+        const priceFilter = document.getElementById('price-filter');
 
         const uniqueCountries = getUniqueValues('country');
         const uniqueCuisines = getUniqueValues('cuisine');
         const uniqueRatings = getUniqueValues('ratingNum');
+        const uniquePrices = getUniqueValues('price');
 
         function populateOptions(filterElement, valuesArray) {
             valuesArray.forEach(value => {
@@ -94,6 +99,7 @@ fetch('data.json')
         populateOptions(countryFilter, uniqueCountries);
         populateOptions(cuisineFilter, uniqueCuisines);
         populateOptions(ratingFilter, uniqueRatings);
+        populateOptions(priceFilter, uniquePrices);
 
         function getUniqueValues(attribute) {
             const values = grids.map(grid => grid[attribute]);
@@ -124,6 +130,7 @@ fetch('data.json')
         countryFilter.addEventListener('change', filterGridItems);
         cuisineFilter.addEventListener('change', filterGridItems);
         ratingFilter.addEventListener('change', filterGridItems);
+        priceFilter.addEventListener('change', filterGridItems);
         searchInput.addEventListener('input', filterGridItems);
 
         // Call once to show all items initially
@@ -191,3 +198,4 @@ fetch('data.json')
         });
     });
     
+ 
