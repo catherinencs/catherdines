@@ -8,6 +8,7 @@ body {
 /* Navigation Bar */
 nav {
     background-color: #EFD9CA; 
+    border-bottom: 0.15vw solid rgb(0, 0, 0);
     overflow: hidden; 
     position: fixed; 
     width: 100%; 
@@ -16,26 +17,27 @@ nav {
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0; 
-    padding: 0; 
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    float: left;
+    list-style-type: none; 
 }
 
 nav a {
     display: block; 
     color: rgb(8, 131, 90); 
     text-align: center; 
-    padding: 14px 50px; 
+    padding: 1vw 5vw; 
     text-decoration: none; 
+    font-size: 1.2vw;
 }
 
 nav a:hover {
-    background-color: #ddd; 
-    color: black; 
+    color: white; 
 }
 
 .container {
@@ -46,44 +48,6 @@ nav a:hover {
 
 .container .box {
     flex: 1;
-}
-
-.map-container {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    padding: 0vw 0vw 1vw 10vw;
-    max-width: 600px;
-    margin: auto;
-}
-
-.map {
-    width: 40vw;
-    height: auto;
-    display: block;
-}
-
-.marker {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-}
-
-.tooltip {
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    white-space: nowrap; 
-    left: 100%; 
-    top: 50%; 
-    transform: translateY(-50%);
-    margin-left: 10px; 
 }
 
 /* Grids (Reviews) */
@@ -155,9 +119,12 @@ nav a:hover {
     padding-top: 50px;
     background-color: rgb(8, 131, 90);
     color: rgb(205, 232, 217);
+    border-bottom: 1vw solid #EFD9CA;
+
 }
 
 .introduction h1 {
+    color: #EFD9CA; 
     text-align: center;
     padding: 20px;
     font-size: 6vw;
@@ -178,14 +145,67 @@ nav a:hover {
 
 #big {
     text-align: center;
-    padding: 0vw 10vw 1vw 0vw;
+    padding: 0vw 8vw 1vw 0vw;
     font-size: 3vw;
 }
 
 .big-num {
-    font-size: 6vw; 
+    font-size: 4vw; 
+    color: #EFD9CA; 
 }
 
+/* Map and Tooltip */
+.map-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 0vw 0vw 1vw 13vw;
+    max-width: 600px;
+    margin: auto;
+}
+
+.map {
+    width: 40vw;
+    height: auto;
+    display: block;
+}
+
+.marker {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    background: url('markerv2.png') no-repeat center center; /* Use the custom marker image */
+    background-size: contain; /* Resize the image to fit within the dimensions of the marker */
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.marker:hover {
+    background-image: url(marker-hover.png);  
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #FADBD3;
+    border: 0.05vw solid rgb(0, 0, 0);
+    border-radius: 5px;
+    white-space: nowrap; 
+    left: 100%; 
+    top: 50%; 
+    transform: translateY(-50%);
+    margin-left: 10px; 
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
+    padding: 1vw;
+}
+
+#tooltip {
+    font-size: 1vw; 
+    color: #EA7A7A;
+    margin: 0;
+    padding: 0vw;
+}
 
 /* Search, Filter and Grid Section */
 .search-and-filter {
@@ -214,6 +234,7 @@ img {
     margin: 0 auto;
 }
 
+/* Avatar */
 .avatar {
     position: relative;
     width: 30vw;  

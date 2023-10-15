@@ -12,10 +12,19 @@
         "title": "Title 2",
         "rating": "★★★★☆",
         "imgSrc": "path_to_image_2",
-        "city": "Paris",
-        "country": "France",
+        "city": "Tokyo",
+        "country": "Japan",
         "cuisine": "Chinese",
         "ratingNum": "4"
+    },
+    {
+        "title": "Hehe Hi",
+        "rating": "★★★☆☆",
+        "imgSrc": "path_to_image_2",
+        "city": "Jakarta",
+        "country": "Indonesia",
+        "cuisine": "Chinese",
+        "ratingNum": "3"
     },
     {
         "title": "Hehe Hi",

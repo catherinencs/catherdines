@@ -1,5 +1,11 @@
 const gridContainer = document.querySelector('.grid');
 
+const countryCoordinates = {
+    'USA': { left: '40%', top: '30%' },
+    'Japan': { left: '88%', top: '39%' },
+    'Indonesia': { left: '83%', top: '58%' }
+};
+
 // Fetch data from the JSON file and then execute the logic
 fetch('data.json')
     .then(response => response.json())
@@ -122,6 +128,42 @@ fetch('data.json')
 
         // Call once to show all items initially
         filterGridItems();
+        const mapContainer = document.querySelector('.map-container');
+        
+        // Create an object to hold counts of reviews per country
+        const countryReviewCounts = {};
+
+        grids.forEach(grid => {
+            if (!countryReviewCounts[grid.country]) {
+                countryReviewCounts[grid.country] = 0;
+            }
+            countryReviewCounts[grid.country]++;
+        });
+
+        // For each unique country, create a marker
+        for (const country in countryReviewCounts) {
+            if (countryCoordinates[country]) {
+                const marker = document.createElement('div');
+                marker.classList.add('marker');
+                marker.style.left = countryCoordinates[country].left;
+                marker.style.top = countryCoordinates[country].top;
+                
+                const tooltip = document.createElement('div');
+                tooltip.classList.add('tooltip');
+                tooltip.style.display = 'none';
+                tooltip.innerHTML = `<p id="tooltip">${country}</p><p id="tooltip">Reviews: ${countryReviewCounts[country]}</p>`;
+                
+                marker.appendChild(tooltip);
+                mapContainer.appendChild(marker);
+                
+                marker.addEventListener('mouseover', function() {
+                    tooltip.style.display = 'block';
+                });
+                marker.addEventListener('mouseout', function() {
+                    tooltip.style.display = 'none';
+                });
+            }
+        }
     })
     .catch(error => {
         console.error("Failed to fetch data:", error);
