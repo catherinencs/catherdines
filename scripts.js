@@ -336,5 +336,21 @@ sendButton.addEventListener('click', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const pixelArts = document.querySelectorAll('.pixel-art-circle');
+
+    pixelArts.forEach(circle => {
+        circle.addEventListener('mouseover', function() {
+            this.setAttribute('data-original-fill', this.getAttribute('fill'));
+            this.setAttribute('fill', this.getAttribute('data-hover-fill'));
+        });
+
+        circle.addEventListener('mouseout', function() {
+            this.setAttribute('fill', this.getAttribute('data-original-fill'));
+        });
+    });
+});
+
+
 // Call the main function to start the process.
 fetchGridData();

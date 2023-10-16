@@ -396,19 +396,25 @@ input::placeholder {
     font-size: 1em;
 }
 
+.suggestions p {
+    font-size: 1.2em;
+}
+
 #user-suggestion {
     width: 80%;
     padding: 10px;
+    padding-bottom: 5vw;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #563110;
+    font-size: 1em;
 }
 
 #send-suggestion {
     padding: 10px 20px;
     background-color: #F06D4E;
-    color: #EAD3C3;
-    border: none;
+    border: 1px solid #563110;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
@@ -423,11 +429,7 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.pixel-art {
-    width: 20rem; 
-    margin: 10px; 
+    padding: 2vw;
 }
 
 

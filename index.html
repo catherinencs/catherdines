@@ -104,15 +104,45 @@
     <h1>next on my plate: your recommendations!</h1>
     <div class="container">
         <div class="image-container">
-            <img src="pixel-food/bigul.png" alt="Babi Guling" class="pixel-art">
-            <img src="pixel-food/soto.png" alt="Soto Ayam" class="pixel-art">
-            <img src="pixel-food/tumpeng.png" alt="Nasi Tumpeng" class="pixel-art">
+            <svg width="120%" height="120%" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="bigul" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="pixel-food/bigul.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                    <pattern id="bigul-hover" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="pixel-food/bigul-hover.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                </defs>
+                <circle cx="50" cy="50" r="50" fill="url(#bigul)" class="pixel-art-circle" data-hover-fill="url(#bigul-hover)"></circle>
+            </svg>
+            <svg width="120%" height="120%" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="tumpeng" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="pixel-food/tumpeng.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                    <pattern id="tumpeng-hover" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="pixel-food/tumpeng-hover.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                </defs>
+                <circle cx="50" cy="50" r="50" fill="url(#tumpeng)" class="pixel-art-circle" data-hover-fill="url(#tumpeng-hover)"></circle>
+            </svg>
+            <svg width="120%" height="120%" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="soto" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="pixel-food/soto.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                    <pattern id="soto-hover" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="pixel-food/soto-hover.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                </defs>
+                <circle cx="50" cy="50" r="50" fill="url(#soto)" class="pixel-art-circle" data-hover-fill="url(#soto-hover)"></circle>
+            </svg>
         </div>
     </div>
     <p>what should i try next?</p>
     <input type="text" id="user-suggestion" placeholder="enter your suggestion here..."> 
     <button id="send-suggestion">send</button>
-    <p id="thank-you-message" style="display:none;">Thanks for your suggestion!</p>
+    <p id="thank-you-message" style="display:none;">thanks for your suggestion!</p>
 </div>
 
 <!-- Contact section -->
