@@ -6,6 +6,11 @@
     <title>CATHERDINES</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the new slick-theme.css if you want the default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+
 </head>
 <body>
     <nav>
@@ -39,7 +44,7 @@
             <circle cx="50" cy="50" r="50" fill="url(#img1)" id="avatar"></circle>
         </svg>
         <div class="box">
-            <p class="right-aligned">some of my fave foods include:<br><br>martabak manis, bitterballen, nasi tumpeng, sushi, babi guling & chicken tikka massala 
+            <p class="right-aligned">some of my fave foods include:<br><br>martabak manis, bitterballen, nasi tumpeng, sushi, babi guling & chicken tikka massala ☆ 
             </p>
         </div>
     </div>
@@ -93,7 +98,9 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2 id="modal-title"></h2>
-                <img id="modal-img" src="" alt="">
+        <!-- inside the modal-content div -->
+<div class="modal-slideshow"></div>
+
     
         
         <p id="modal-review"></p>
@@ -162,6 +169,8 @@
     </div>
 </div>
 <script src="scripts.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </body>
 </html>

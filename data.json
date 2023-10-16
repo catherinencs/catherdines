@@ -3,7 +3,10 @@
         "title": "The Bridge",
         "rating": "★★★★★",
         "price": "$$$",
-        "imgSrc": "lobster.png",
+        "imgsrcs": [
+            "lobster.png",
+            "about/markerv2.png"
+        ],
         "city": "New York",
         "country": "USA",
         "cuisine": "Italian",
@@ -13,7 +16,10 @@
         "title": "Zodiac Baresto",
         "rating": "★★★★☆",
         "price": "$$$",
-        "imgSrc": "marker.png",
+        "imgsrcs": [
+            "lobster.png",
+            "lobster.png"
+        ],
         "city": "Jakarta",
         "country": "Indonesia",
         "cuisine": "Chinese",
@@ -23,7 +29,10 @@
         "title": "Dishoom",
         "rating": "★★☆☆☆",
         "price": "$$",
-        "imgSrc": "marker.png",
+        "imgsrcs": [
+            "lobster.png",
+            "lobster.png"
+        ],
         "city": "London",
         "country": "UK",
         "cuisine": "Indian",
@@ -33,7 +42,10 @@
         "title": "Omoide Yokocho",
         "rating": "★★☆☆☆",
         "price": "$",
-        "imgSrc": "marker.png",
+        "imgsrcs": [
+            "lobster.png",
+            "lobster.png"
+        ],
         "city": "Tokyo",
         "country": "Japan",
         "cuisine": "Japanese",
@@ -43,7 +55,10 @@
         "title": "Hehe Hi",
         "rating": "★★★☆☆",
         "price": "$$$",
-        "imgSrc": "marker.png",
+        "imgsrcs": [
+            "lobster.png",
+            "lobster.png"
+        ],
         "city": "Jakarta",
         "country": "Indonesia",
         "cuisine": "Chinese"
@@ -52,7 +67,10 @@
         "title": "Hehe Hi",
         "rating": "★★★☆☆",
         "price": "$$$",
-        "imgSrc": "path_to_image_2",
+        "imgsrcs": [
+            "lobster.png",
+            "lobster.png"
+        ],
         "city": "Jakarta",
         "country": "Indonesia",
         "cuisine": "Chinese"
@@ -61,10 +79,12 @@
         "title": "Hehe Hi",
         "rating": "★★★☆☆",
         "price": "$$$",
-        "imgSrc": "path_to_image_2",
+        "imgsrcs": [
+            "lobster.png",
+            "lobster.png"
+        ],
         "city": "Singapore",
         "country": "Singapore",
-        "cuisine": "Chinese",
-        "ratingNum": "3"
+        "cuisine": "Chinese"
     }
 ]

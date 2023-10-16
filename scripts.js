@@ -14,11 +14,13 @@ const countryCoordinates = {
 function fetchGridData() {
     fetch('data.json')
         .then(response => response.json())
+        
         .then(processGridData)
         .catch(error => {
             console.error("Failed to fetch data:", error);
         });
 }
+
 
 /**
  * Processes and renders grid data.
@@ -46,19 +48,21 @@ function processGridData(grids) {
  */
 function renderGridItems(grids) {
     const gridItemsHTML = grids.map(grid => `
-        <div class="grid-item" 
-            data-country="${grid.country}" 
-            data-cuisine="${grid.cuisine}" 
-            data-rating="${grid.rating}" 
-            data-price="${grid.price}">
-            <h2>${grid.title}</h2>
-            <img src="${grid.imgSrc}" alt="${grid.title}">
-            <p><span class="stars">${grid.rating}</span><span class="dollars">${grid.price}</span></p>
-            <p>${grid.cuisine} restaurant in ${grid.city}, ${grid.country}</p>
-        </div>
+    <div class="grid-item" 
+    data-json='${JSON.stringify(grid)}' 
+    data-country="${grid.country}" 
+    data-cuisine="${grid.cuisine}" 
+    data-rating="${grid.rating}" 
+    data-price="${grid.price}">
+    <h2>${grid.title}</h2>
+    <img src="${grid.imgsrcs[0]}" alt="${grid.title}">
+    <p><span class="stars">${grid.rating}</span><span class="dollars">${grid.price}</span></p>
+    <p>${grid.cuisine} restaurant in ${grid.city}, ${grid.country}</p>
+</div>
     `).join('');
     gridContainer.innerHTML = gridItemsHTML;
 }
+
 
 /**
  * Sets up modal interactions.
@@ -66,24 +70,45 @@ function renderGridItems(grids) {
 function setupModalInteractions() {
     const modal = document.getElementById("myModal");
     const modalTitle = document.getElementById("modal-title");
-    const modalImg = document.getElementById("modal-img");
+    const modalSlideshow = document.querySelector(".modal-slideshow");
     const modalReview = document.getElementById("modal-review");
     const closeModalBtn = document.querySelector(".close");
 
     document.querySelectorAll(".grid-item").forEach(item => {
         item.addEventListener('click', function() {
-            modalTitle.textContent = this.querySelector('h2').textContent;
-            modalImg.src = this.querySelector('img').src;
-            modalImg.alt = this.querySelector('img').alt;
-            modalReview.textContent = this.getAttribute("review");
+            const gridData = JSON.parse(this.getAttribute('data-json'));
+            modalTitle.textContent = gridData.title;
+            modalReview.textContent = gridData.review;
+
+            // Clear previous slideshow images
+            modalSlideshow.innerHTML = '';
+            gridData.imgsrcs.forEach(imgsrc => {
+                const img = document.createElement('img');
+                img.src = imgsrc;
+                modalSlideshow.appendChild(img);
+            });
+
+            // Initialize or reinitialize Slick on the new images
+            $(modalSlideshow).slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
+
             modal.style.display = "block";
         });
     });
 
-    closeModalBtn.onclick = () => modal.style.display = "none";
+    closeModalBtn.onclick = () => {
+        modal.style.display = "none";
+        $(modalSlideshow).slick('unslick');
+    };
     window.onclick = (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
+            $(modalSlideshow).slick('unslick');
         }
     };
 }
@@ -304,9 +329,9 @@ function showModal(review) {
     slideshow.innerHTML = '';  // Clear any previous images
 
     // Assuming each review in your JSON has a property "images" that is an array of image URLs
-    review.images.forEach(imgSrc => {
+    review.images.forEach(imgsrc => {
         const img = document.createElement('img');
-        img.src = imgSrc;
+        img.src = imgsrc;
         slideshow.appendChild(img);
     });
 
