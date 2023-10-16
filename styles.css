@@ -419,6 +419,17 @@ input::placeholder {
     color: #F06D4E;
 }
 
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pixel-art {
+    width: 20rem; 
+    margin: 10px; 
+}
+
 
 /* Contact Section */
 .contact {
