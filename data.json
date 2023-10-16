@@ -6,13 +6,39 @@
         "imgsrcs": [
             "img/bridge/bridge-01.png",
             "img/bridge/bridge-02.png",
+            "img/bridge/bridge-05.png",
             "img/bridge/bridge-03.png",
-            "img/bridge/bridge-04.png"
+            "img/bridge/bridge-04.png",
+            "img/bridge/bridge-06.png",
+            "img/bridge/bridge-07.png",
+            "img/bridge/bridge-08.png"
         ],
         "city": "Jakarta",
         "country": "Indonesia",
         "cuisine": "Italian",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+        "review": "Been to The Bridge a couple of times and it never disappoints!  The lobster noodles? Top-notch. Super tender and juicy. And don't even get me started on the creamy spinach – perfect with every bite and great for switching things up between dishes.  If you're into steak and ribs, they've got that covered too. The restaurant has a chill vibe, making it great for catching up with friends. Definitely worth a visit!"
+    },
+    {
+        "title": "Sushi by M",
+        "rating": "★★★★☆",
+        "price": "$$$",
+        "imgsrcs": [
+            "img/bym/bym-09.png",
+            "img/bym/bym-01.png",
+            "img/bym/bym-02.png",
+            "img/bym/bym-03.png",
+            "img/bym/bym-04.png",
+            "img/bym/bym-05.png",
+            "img/bym/bym-06.png",
+            "img/bym/bym-07.png",
+            "img/bym/bym-08.png",
+            "img/bym/bym-10.png",
+            "img/bym/bym-11.png"
+        ],
+        "city": "New York City",
+        "country": "USA",
+        "cuisine": "Japanese",
+        "review": "Sushi by M is hands down one of my top omakase picks! Every bite of sushi is a flavor explosion, and they've absolutely mastered the wasabi-to-fish ratio, giving it the perfect kick without going over the edge. Oh, and you've got to try the oysters - perfect for passing around the table and  tastes divine. The chefs create a welcoming and light-hearted atmosphere with their humor and warmth.  Overall, it's a killer omakase experience, though I've come across other spots that offer similar quality at a more affordable price."
     },
     {
         "title": "Katz's Delicatessen",
@@ -29,11 +55,26 @@
         "city": "New York City",
         "country": "USA",
         "cuisine": "Jewish",
-        "review": "This burger is absolutely delicious  with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsndswith juicy meat and fresh ingredients. dhdesjnhejsnds"
+        "review": "I've heard so many people rave about Katz's, and now that I've had a taste? Totally on board with the hype! Their pastrami on rye is their star player, and it did not disappoint. It's hard to even put into words how fantastic that combo was. Kinda kicking myself for not exploring more of the menu. Heads up, though: the line can get insanely long and it's a bit of a squeeze inside. But honestly? A small price to pay for that heavenly pastrami."
+    },
+    {
+        "title": "Ming's Seafood",
+        "rating": "★★★☆☆",
+        "price": "$$",
+        "imgsrcs": [
+            "img/ming/ming-01.png",
+            "img/ming/ming-02.png",
+            "img/ming/ming-03.png",
+            "img/ming/ming-04.png"
+        ],
+        "city": "Boston",
+        "country": "USA",
+        "cuisine": "Chinese",
+        "review": "Stumbled upon this spot in Boston, and I was pleasantly surprised to find they stay open late – a rarity around here. The service was swift; I ordered the sweet and sour pork, crab rangoon, and peking duck. The portions were generous - I left with a full stomach and still had leftovers to bring home. The authentic Chinese flavors hit the spot and eased my homesickness, though it was nothing too special."
     },
     {
         "title": "Zodiac Baresto",
-        "rating": "★★★★☆",
+        "rating": "★★☆☆☆",
         "price": "$$$",
         "imgsrcs": [
             "img/zodiac/zodiac-03.png",
@@ -46,7 +87,7 @@
         "city": "Jakarta",
         "country": "Indonesia",
         "cuisine": "Fusian",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+        "review": "I tried out a 7-course meal here, and well, it wasn't entirely my jam. Kudos to the chef for for playing with some adventurous flavors, but they didn't quite hit the mark for me. On the upside, the 'Merapi red rice'—a mix of rice, clam, and oyster—was a standout. The reduced milk ice cream for dessert was delicious, but nothing special. The rest? Meh. I still ate it all to get my money's value, but left with my stomach still rumbling."
     },
     {
         "title": "The India",
@@ -61,10 +102,10 @@
         "city": "London",
         "country": "UK",
         "cuisine": "Indian",
-        "review": "This burger is absolutely haha's delicious with juicy meat and fresh ingredients."
+        "review": "This is hands down the best Indian restaurant I've tried. In life. Came here with 4 friends and we all got chicken tikka masala and garlic naan. Yes, we are basic. Yes, the waiter gave us a big side eye when we ordered. But who cares when it's this good? The masala was a flavor bomb - just the right kick. And that naan? Fluffy, garlicky perfection. As you can see from the images, I completely devoured my meal. The spot's tucked away underground, which meant no phone signal. It was kinda refreshing to have everyone unplugged and just enjoying the meal. No distractions, just delish food and good company!"
     },
     {
-        "title": "Omoide Yokocho",
+        "title": "Omoide Yokochō",
         "rating": "★★☆☆☆",
         "price": "$",
         "imgsrcs": [
@@ -76,57 +117,20 @@
         "city": "Tokyo",
         "country": "Japan",
         "cuisine": "Japanese",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+        "review": "Omoide Yokochō in Tokyo is a charming alley lined with food stalls, drawing in both locals and tourists. At night, the ambiance feels straight out of a Ghibli film. I decided to sample yakitori from a few stalls, but was left a bit disappointed. Some of the meat had a burnt taste, which wasn't quite what I was expecting. I've definitely had better yakitori from Japanese convenience stores. Perhaps I just chose the wrong stalls? Not sure, but I'm willing to give this place another shot and explore different stalls on my next visit."
     },
     {
-        "title": "Ming's Seafood",
+        "title": "Age Ya",
         "rating": "★★★★☆",
         "price": "$$",
         "imgsrcs": [
-            "img/ming/ming-01.png",
-            "img/ming/ming-02.png",
-            "img/ming/ming-03.png",
-            "img/ming/ming-04.png"
-        ],
-        "city": "Boston",
-        "country": "USA",
-        "cuisine": "Chinese",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
-    },
-    {
-        "title": "Dish",
-        "rating": "★★☆☆☆",
-        "price": "$$",
-        "imgsrcs": [
-            "lobster.png",
-            "lobster.png"
+            "img/ageya/ageya-02.png",
+            "img/ageya/ageya-03.png",
+            "img/ageya/ageya-01.png"
         ],
         "city": "Singapore",
         "country": "Singapore",
-        "cuisine": "Indian",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
-    },
-    {
-        "title": "Sushi by M",
-        "rating": "★★★★☆",
-        "price": "$$$",
-        "imgsrcs": [
-            "img/bym/bym-01.png",
-            "img/bym/bym-02.png",
-            "img/bym/bym-09.png",
-            "img/bym/bym-04.png",
-            "img/bym/bym-05.png",
-            "img/bym/bym-06.png",
-            "img/bym/bym-07.png",
-            "img/bym/bym-08.png",
-            "img/bym/bym-09.png",
-            "img/bym/bym-10.png",
-            "img/bym/bym-11.png",
-            "img/bym/bym-12.png"
-        ],
-        "city": "New York City",
-        "country": "USA",
         "cuisine": "Japanese",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+        "review": "Discovered this tucked-away gem and was thoroughly impressed! The sashimi was incredibly fresh, and for the quality, it's truly bang for your buck. The ambiance is simple, adding to its charm. I'll definitely be returning for another delightful experience. Highly recommend!"
     }
 ]
