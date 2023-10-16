@@ -49,12 +49,14 @@
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
-        "title": "Dishoom",
-        "rating": "★★☆☆☆",
+        "title": "The India",
+        "rating": "★★★★☆",
         "price": "$$",
         "imgsrcs": [
-            "lobster.png",
-            "lobster.png"
+            "img/india/india-01.png",
+            "img/india/india-02.png",
+            "img/india/india-03.png",
+            "img/india/india-04.png"
         ],
         "city": "London",
         "country": "UK",
@@ -92,7 +94,7 @@
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
-        "title": "Dishoom",
+        "title": "Dish",
         "rating": "★★☆☆☆",
         "price": "$$",
         "imgsrcs": [
