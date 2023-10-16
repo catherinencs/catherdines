@@ -11,14 +11,36 @@
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
-        "title": "Title 2",
+        "title": "Zodiac Baresto",
         "rating": "★★★★☆",
-        "price": "$$",
+        "price": "$$$",
+        "imgSrc": "marker.png",
+        "city": "Jakarta",
+        "country": "Indonesia",
+        "cuisine": "Chinese",
+        "ratingNum": "4",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+    },
+    {
+        "title": "Omoide Yokocho",
+        "rating": "★★☆☆☆",
+        "price": "$",
         "imgSrc": "marker.png",
         "city": "Tokyo",
         "country": "Japan",
-        "cuisine": "Chinese",
-        "ratingNum": "4",
+        "cuisine": "Japanese",
+        "ratingNum": "3",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+    },
+    {
+        "title": "Dishoom",
+        "rating": "★★☆☆☆",
+        "price": "$$",
+        "imgSrc": "marker.png",
+        "city": "London",
+        "country": "UK",
+        "cuisine": "Indian",
+        "ratingNum": "3",
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {

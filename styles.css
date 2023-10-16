@@ -74,7 +74,7 @@ nav a:hover {
 
 /* INTRODUCTION SECTION */
 .introduction {
-    padding-top: 3rem;
+    padding-top: 3.5rem;
     background-color: rgb(8, 131, 90);
     color: rgb(205, 232, 217);
     border-bottom: 1vw solid #EFD9CA;
@@ -85,10 +85,8 @@ nav a:hover {
 .introduction h1 {
     color: #EFD9CA; 
     text-align: center;
-    padding: 20px;
-    font-size: 6vw;
+    font-size: 5em;
     margin: 0; 
-    padding: 0px 0;
 }
 
 .introduction p {
