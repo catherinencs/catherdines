@@ -22,6 +22,7 @@ input:focus {
 button:hover {
     color: #F06D4E;
 }
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -229,8 +230,6 @@ nav a:hover {
 }
 
 /* Search Bar */
-
-
 .search-container {
     display: flex;
     align-items: center;
@@ -387,7 +386,7 @@ input::placeholder {
     display: flex;
 }
 
-/* Suggestions Section */
+/* SUGGESTIONS SECTION */
 .suggestions {
     display: flex;
     flex-direction: column; 
@@ -439,7 +438,7 @@ input::placeholder {
 }
 
 
-/* Contact Section */
+/* CONTACT SECTION */
 .contact {
     display: flex;
     flex-direction: column; 
@@ -451,7 +450,7 @@ input::placeholder {
     color: white;
 }
 
-/* Modal Section */
+/* Modal Format */
 .modal {
     display: none; 
     position: fixed; 
@@ -486,8 +485,6 @@ input::placeholder {
     width: 50%;
 }
 
-
-
 .slick-next:before {
     color: grey !important;  
 }
@@ -495,6 +492,3 @@ input::placeholder {
 .slick-prev:before {
     color: grey !important;  
 }
-
-
-

@@ -21,7 +21,6 @@ function fetchGridData() {
         });
 }
 
-
 /**
  * Processes and renders grid data.
  * @param {Array} grids - Array of grid data objects.
@@ -62,7 +61,6 @@ function renderGridItems(grids) {
     `).join('');
     gridContainer.innerHTML = gridItemsHTML;
 }
-
 
 /**
  * Sets up modal interactions.
@@ -339,7 +337,6 @@ function showModal(review) {
     const slideshow = document.querySelector('.modal-slideshow');
     slideshow.innerHTML = '';  // Clear any previous images
 
-    // Assuming each review in your JSON has a property "images" that is an array of image URLs
     review.images.forEach(imgsrc => {
         const img = document.createElement('img');
         img.src = imgsrc;
