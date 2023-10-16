@@ -72,13 +72,24 @@ function setupModalInteractions() {
     const modalTitle = document.getElementById("modal-title");
     const modalSlideshow = document.querySelector(".modal-slideshow");
     const modalReview = document.getElementById("modal-review");
+    const modalCity = document.getElementById("modal-city");
+    const modalCountry = document.getElementById("modal-country");
+    const modalPrice = document.getElementById("modal-price");
+    const modalRating = document.getElementById("modal-rating");
+    const modalCuisine = document.getElementById("modal-cuisine");
     const closeModalBtn = document.querySelector(".close");
 
     document.querySelectorAll(".grid-item").forEach(item => {
         item.addEventListener('click', function() {
             const gridData = JSON.parse(this.getAttribute('data-json'));
+            
+            modalRating.textContent = gridData.rating;
             modalTitle.textContent = gridData.title;
             modalReview.textContent = gridData.review;
+            modalCity.textContent = gridData.city;
+            modalCountry.textContent = gridData.country;
+            modalPrice.textContent = gridData.price;
+            modalCuisine.textContent = gridData.cuisine;
 
             // Clear previous slideshow images
             modalSlideshow.innerHTML = '';

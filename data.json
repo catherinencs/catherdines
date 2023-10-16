@@ -4,8 +4,7 @@
         "rating": "★★★★★",
         "price": "$$$",
         "imgsrcs": [
-            "lobster.png",
-            "about/markerv2.png"
+            "lobster.png"
         ],
         "city": "New York",
         "country": "USA",
@@ -62,7 +61,8 @@
         ],
         "city": "Jakarta",
         "country": "Indonesia",
-        "cuisine": "Chinese"
+        "cuisine": "Chinese",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
         "title": "Hehe Hi",
@@ -74,7 +74,8 @@
         ],
         "city": "Jakarta",
         "country": "Indonesia",
-        "cuisine": "Chinese"
+        "cuisine": "Chinese",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
         "title": "Hehe Hi",
@@ -86,6 +87,7 @@
         ],
         "city": "Singapore",
         "country": "Singapore",
-        "cuisine": "Chinese"
+        "cuisine": "Chinese",
+        "review": "This burger is absolutely delicious  with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsndswith juicy meat and fresh ingredients. dhdesjnhejsnds"
     }
 ]
