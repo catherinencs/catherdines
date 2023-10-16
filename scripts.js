@@ -319,7 +319,6 @@ function showModal(review) {
     });
 }
 
-
 // Grabbing the necessary elements
 const sendButton = document.getElementById('send-suggestion');
 const suggestionInput = document.getElementById('user-suggestion');
@@ -335,7 +334,6 @@ sendButton.addEventListener('click', function() {
     thankYouMessage.style.display = 'block';
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const pixelArts = document.querySelectorAll('.pixel-art-circle');
 
@@ -350,7 +348,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 
 // Call the main function to start the process.
 fetchGridData();
