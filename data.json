@@ -7,7 +7,6 @@
         "city": "New York",
         "country": "USA",
         "cuisine": "Italian",
-        "ratingNum": "5",
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
@@ -18,18 +17,6 @@
         "city": "Jakarta",
         "country": "Indonesia",
         "cuisine": "Chinese",
-        "ratingNum": "4",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
-    },
-    {
-        "title": "Omoide Yokocho",
-        "rating": "★★☆☆☆",
-        "price": "$",
-        "imgSrc": "marker.png",
-        "city": "Tokyo",
-        "country": "Japan",
-        "cuisine": "Japanese",
-        "ratingNum": "3",
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
@@ -40,7 +27,16 @@
         "city": "London",
         "country": "UK",
         "cuisine": "Indian",
-        "ratingNum": "3",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+    },
+    {
+        "title": "Omoide Yokocho",
+        "rating": "★★☆☆☆",
+        "price": "$",
+        "imgSrc": "marker.png",
+        "city": "Tokyo",
+        "country": "Japan",
+        "cuisine": "Japanese",
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
@@ -50,8 +46,7 @@
         "imgSrc": "marker.png",
         "city": "Jakarta",
         "country": "Indonesia",
-        "cuisine": "Chinese",
-        "ratingNum": "3"
+        "cuisine": "Chinese"
     },
     {
         "title": "Hehe Hi",
@@ -60,8 +55,7 @@
         "imgSrc": "path_to_image_2",
         "city": "Jakarta",
         "country": "Indonesia",
-        "cuisine": "Chinese",
-        "ratingNum": "3"
+        "cuisine": "Chinese"
     },
     {
         "title": "Hehe Hi",

@@ -49,7 +49,7 @@ function renderGridItems(grids) {
         <div class="grid-item" 
             data-country="${grid.country}" 
             data-cuisine="${grid.cuisine}" 
-            data-rating="${grid.ratingNum}" 
+            data-rating="${grid.rating}" 
             data-price="${grid.price}">
             <h2>${grid.title}</h2>
             <img src="${grid.imgSrc}" alt="${grid.title}">
@@ -169,7 +169,7 @@ function setupFiltersAndSearch(grids) {
 
     populateOptions(countryFilter, getUniqueValues(grids, 'country'));
     populateOptions(cuisineFilter, getUniqueValues(grids, 'cuisine'));
-    populateOptions(ratingFilter, getUniqueValues(grids, 'ratingNum'));
+    populateOptions(ratingFilter, getUniqueValues(grids, 'rating'));
     populateOptions(priceFilter, getUniqueValues(grids, 'price'));
 
     const eventListeners = ['change', 'keydown', 'click'];
