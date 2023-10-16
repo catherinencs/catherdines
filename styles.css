@@ -464,6 +464,11 @@ input::placeholder {
     background-color: rgba(0,0,0,0.4); 
 }
 
+.modal-slideshow {
+    width: 20%;
+    width: 50vw;
+}
+
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -471,6 +476,8 @@ input::placeholder {
     width: 80%;
     border: 0.2vw solid black;
     max-height: 75%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .modal img {
