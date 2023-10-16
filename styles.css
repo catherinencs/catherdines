@@ -87,7 +87,7 @@ nav a:hover {
 .introduction h1 {
     color: #EFD9CA;
     text-align: center;
-    font-size: 5em;
+    font-size: 7vw;
     margin: 0;
 }
 
@@ -235,7 +235,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     position: relative;
-    width: 65%;
+    width: 80%;
     margin: 20px auto;
     border: 0.12vw solid black;
     background-color: white;
