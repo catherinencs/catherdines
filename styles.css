@@ -295,7 +295,8 @@ input::placeholder {
 
 .filter-options select {
     margin: 5px;
-    background-color: #EF938F;
+    background-color: #F06D4E;
+    color: white;
     border: none;
     padding: 5px 10px;
     font-size: 1em;
@@ -305,6 +306,7 @@ input::placeholder {
 
 .filter-options select:hover {
     background-color: #EFD9CA;
+    color:#F06D4E;
 }
 
 /* Grids (Reviews) */
@@ -383,10 +385,40 @@ input::placeholder {
 
 /* Suggestions Section */
 .suggestions {
-    background-color: yellow;
-    color: black;
-    padding: 20px 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; 
+    padding: 4rem 2rem 4rem 2rem;
+    border-bottom: 1vw solid #EFD9CA;
+    background-color: #EFB648;
+    color: #5D3403;
+    font-size: 1em;
 }
+
+#user-suggestion {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #563110;
+}
+
+#send-suggestion {
+    padding: 10px 20px;
+    background-color: #F06D4E;
+    color: #EAD3C3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#send-suggestion:hover {
+    background-color: #EFD9CA;
+    color: #F06D4E;
+}
+
 
 /* Contact Section */
 .contact {
@@ -395,9 +427,7 @@ input::placeholder {
     padding: 20px 0;
 }
 
-
-
-
+/* Modal Section */
 .modal {
     display: none; 
     position: fixed; 
@@ -415,8 +445,13 @@ input::placeholder {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
     width: 80%;
+    border: 0.2vw solid black;
+    max-height: 75%;
+}
+
+.modal img {
+    width: 50%;
 }
 
 .close {

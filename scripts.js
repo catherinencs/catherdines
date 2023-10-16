@@ -1,6 +1,5 @@
 const gridContainer = document.querySelector('.grid');
 
-
 const countryCoordinates = {
     'USA': { left: '40%', top: '30%' },
     'Japan': { left: '88%', top: '39%' },
@@ -298,6 +297,44 @@ function setupAvatarHoverEffect() {
         this.setAttribute('fill', 'url(#img1)');
     });
 }
+
+function showModal(review) {
+    const slideshow = document.querySelector('.modal-slideshow');
+    slideshow.innerHTML = '';  // Clear any previous images
+
+    // Assuming each review in your JSON has a property "images" that is an array of image URLs
+    review.images.forEach(imgSrc => {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        slideshow.appendChild(img);
+    });
+
+    // Initialize Slick on the slideshow
+    $(slideshow).slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+    });
+}
+
+
+// Grabbing the necessary elements
+const sendButton = document.getElementById('send-suggestion');
+const suggestionInput = document.getElementById('user-suggestion');
+const thankYouMessage = document.getElementById('thank-you-message');
+
+// Add the event listener to the send button
+sendButton.addEventListener('click', function() {
+    // Hide the input and the send button
+    suggestionInput.style.display = 'none';
+    sendButton.style.display = 'none';
+
+    // Display the thank you message
+    thankYouMessage.style.display = 'block';
+});
+
 
 // Call the main function to start the process.
 fetchGridData();

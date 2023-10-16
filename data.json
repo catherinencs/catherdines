@@ -14,17 +14,18 @@
         "title": "Title 2",
         "rating": "★★★★☆",
         "price": "$$",
-        "imgSrc": "path_to_image_2",
+        "imgSrc": "marker.png",
         "city": "Tokyo",
         "country": "Japan",
         "cuisine": "Chinese",
-        "ratingNum": "4"
+        "ratingNum": "4",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
         "title": "Hehe Hi",
         "rating": "★★★☆☆",
         "price": "$$$",
-        "imgSrc": "path_to_image_2",
+        "imgSrc": "marker.png",
         "city": "Jakarta",
         "country": "Indonesia",
         "cuisine": "Chinese",

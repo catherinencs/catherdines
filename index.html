@@ -84,20 +84,34 @@
     </div>
 
     <div class="grid"></div>
-    <div class="no-results">that's uncharted territory on our food map!<br><i class="fa-solid fa-map-location-dot"></i><br>try another spot.</div>
+    <div class="no-results">that's uncharted territory on my food map!<br><i class="fa-solid fa-map-location-dot"></i><br>try another spot.</div>
 </div>
 
-<!-- This is your modal structure -->
+<!-- Modal structure -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2 id="modal-title"></h2>
-        <img id="modal-img" src="" alt="">
+                <img id="modal-img" src="" alt="">
+    
+        
         <p id="modal-review"></p>
     </div>
 </div>
 
+<!-- Suggestions section -->
+<div class="suggestions" id="suggestions">
+    <h1>next on my plate: your recommendations!</h1>
+    <p>what should i try next?</p>
+    <input type="text" id="user-suggestion" placeholder="enter your suggestion here..."> 
+    <button id="send-suggestion">send</button>
+    <p id="thank-you-message" style="display:none;">Thanks for your suggestion!</p>
+</div>
 
+<!-- Contact section -->
+<div class="contact" id="contact">
+    <h1>contact me!</h1>
+</div>
 <script src="scripts.js"></script>
 
 </body>
