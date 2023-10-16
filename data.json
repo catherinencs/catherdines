@@ -4,25 +4,48 @@
         "rating": "★★★★★",
         "price": "$$$",
         "imgsrcs": [
-            "lobster.png"
+            "img/bridge/bridge-01.png",
+            "img/bridge/bridge-02.png",
+            "img/bridge/bridge-03.png",
+            "img/bridge/bridge-04.png"
         ],
-        "city": "New York",
-        "country": "USA",
+        "city": "Jakarta",
+        "country": "Indonesia",
         "cuisine": "Italian",
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+    },
+    {
+        "title": "Katzs Delicatessen",
+        "rating": "★★★★★",
+        "price": "$$",
+        "imgsrcs": [
+            "img/katz/katz-01.png",
+            "img/katz/katz-03.png",
+            "img/katz/katz-04.png",
+            "img/katz/katz-02.png",
+            "img/katz/katz-05.png",
+            "img/katz/katz-06.png"
+        ],
+        "city": "New York City",
+        "country": "USA",
+        "cuisine": "Jewish",
+        "review": "This burger is absolutely delicious  with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsndswith juicy meat and fresh ingredients. dhdesjnhejsnds"
     },
     {
         "title": "Zodiac Baresto",
         "rating": "★★★★☆",
         "price": "$$$",
         "imgsrcs": [
-            "lobster.png",
-            "lobster.png",
-            "lobster.png"
+            "img/zodiac/zodiac-03.png",
+            "img/zodiac/zodiac-04.png",
+            "img/zodiac/zodiac-01.png",
+            "img/zodiac/zodiac-02.png",
+            "img/zodiac/zodiac-05.png",
+            "img/zodiac/zodiac-06.png"
         ],
         "city": "Jakarta",
         "country": "Indonesia",
-        "cuisine": "Chinese",
+        "cuisine": "Fusian",
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
@@ -43,8 +66,10 @@
         "rating": "★★☆☆☆",
         "price": "$",
         "imgsrcs": [
-            "lobster.png",
-            "lobster.png"
+            "img/omoide/omoide-01.png",
+            "img/omoide/omoide-02.png",
+            "img/omoide/omoide-03.png",
+            "img/omoide/omoide-04.png"
         ],
         "city": "Tokyo",
         "country": "Japan",
@@ -52,42 +77,55 @@
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
-        "title": "Hehe Hi",
-        "rating": "★★★☆☆",
-        "price": "$$$",
+        "title": "Mings Seafood",
+        "rating": "★★★★☆",
+        "price": "$$",
         "imgsrcs": [
-            "lobster.png",
-            "lobster.png"
+            "img/ming/ming-01.png",
+            "img/ming/ming-02.png",
+            "img/ming/ming-03.png",
+            "img/ming/ming-04.png"
         ],
-        "city": "Jakarta",
-        "country": "Indonesia",
+        "city": "Boston",
+        "country": "USA",
         "cuisine": "Chinese",
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
-        "title": "Hehe Hi",
-        "rating": "★★★☆☆",
-        "price": "$$$",
-        "imgsrcs": [
-            "lobster.png",
-            "lobster.png"
-        ],
-        "city": "Jakarta",
-        "country": "Indonesia",
-        "cuisine": "Chinese",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
-    },
-    {
-        "title": "Hehe Hi",
-        "rating": "★★★☆☆",
-        "price": "$$$",
+        "title": "Dishoom",
+        "rating": "★★☆☆☆",
+        "price": "$$",
         "imgsrcs": [
             "lobster.png",
             "lobster.png"
         ],
         "city": "Singapore",
         "country": "Singapore",
-        "cuisine": "Chinese",
-        "review": "This burger is absolutely delicious  with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsnds with juicy meat and fresh ingredients. dhdesjnhejsndswith juicy meat and fresh ingredients. dhdesjnhejsnds"
+        "cuisine": "Indian",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+    },
+    {
+        "title": "Sushi by M",
+        "rating": "★★★★☆",
+        "price": "$$$",
+        "imgsrcs": [
+            "img/bym/bym-01.png",
+            "img/bym/bym-02.png",
+            "img/bym/bym-09.png",
+            "img/bym/bym-04.png",
+            "img/bym/bym-05.png",
+            "img/bym/bym-06.png",
+            "img/bym/bym-07.png",
+            "img/bym/bym-08.png",
+            "img/bym/bym-09.png",
+            "img/bym/bym-10.png",
+            "img/bym/bym-11.png",
+            "img/bym/bym-12.png"
+        ],
+        "city": "New York City",
+        "country": "USA",
+        "cuisine": "Japanese",
+        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     }
 ]
+    

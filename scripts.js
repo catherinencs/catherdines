@@ -48,7 +48,7 @@ function processGridData(grids) {
 function renderGridItems(grids) {
     const gridItemsHTML = grids.map(grid => `
     <div class="grid-item" 
-    data-json='${JSON.stringify(grid)}' 
+    data-json='${JSON.stringify(grid)}'
     data-country="${grid.country}" 
     data-cuisine="${grid.cuisine}" 
     data-rating="${grid.rating}" 
@@ -56,7 +56,7 @@ function renderGridItems(grids) {
     <h2>${grid.title}</h2>
     <img src="${grid.imgsrcs[0]}" alt="${grid.title}">
     <p><span class="stars">${grid.rating}</span><span class="dollars">${grid.price}</span></p>
-    <p>${grid.cuisine} restaurant in ${grid.city}, ${grid.country}</p>
+    <p>${grid.cuisine} in ${grid.city}, ${grid.country}</p>
 </div>
     `).join('');
     gridContainer.innerHTML = gridItemsHTML;
