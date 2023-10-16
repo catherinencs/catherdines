@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>catherdines</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
+
 <body>
     <nav>
         <ul>
@@ -19,158 +22,169 @@
         </ul>
     </nav>
 
-<!-- Introduction section -->
+    <!-- Introduction section -->
     <div class="introduction" id="about">
-    <h1>CATHERDINES</h1>
-    <div class="container">
-        <div class="box">
-            <div class="rectangle">
-                <p>hi, i’m catherine! ♡<br><br>welcome to my food diary! i consume anything & everything.<br><br>except coffee.
+        <h1>CATHERDINES</h1>
+        <div class="container">
+            <div class="box">
+                <div class="rectangle">
+                    <p>hi, i’m catherine! ♡<br><br>welcome to my food diary! i consume anything &
+                        everything.<br><br>except coffee.
+                    </p>
+                </div>
+            </div>
+            <svg width="25%" height="25%" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="about/avatar.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                    <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
+                        <image href="about/avatar-hover.png" x="0" y="0" width="100" height="100"></image>
+                    </pattern>
+                </defs>
+                <circle cx="50" cy="50" r="50" fill="url(#img1)" id="avatar"></circle>
+            </svg>
+            <div class="box">
+                <p class="right-aligned">some of my fave foods include:<br><br>martabak manis, bitterballen, nasi
+                    tumpeng, sushi, babi guling & chicken tikka massala ☆
                 </p>
             </div>
         </div>
-        <svg width="25%" height="25%" viewBox="0 0 100 100">
-            <defs>
-                <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
-                    <image href="about/avatar.png" x="0" y="0" width="100" height="100"></image>
-                </pattern>
-                <pattern id="img2" patternUnits="userSpaceOnUse" width="100" height="100">
-                    <image href="about/avatar-hover.png" x="0" y="0" width="100" height="100"></image>
-                </pattern>
-            </defs>
-            <circle cx="50" cy="50" r="50" fill="url(#img1)" id="avatar"></circle>
-        </svg>
-        <div class="box">
-            <p class="right-aligned">some of my fave foods include:<br><br>martabak manis, bitterballen, nasi tumpeng, sushi, babi guling & chicken tikka massala ☆ 
-            </p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="map-container">
-            <img src="about/worldmapv2.png" alt="World Map" class="map">
-        </div>        
-        <div class="box">
-            <p id="review">
-                <span class="big-num" id="review-count">0</span> reviews <br> across <span class="big-num" id="country-count">0</span> countries
-            </p>
-        </div>
-    </div>
-   </div>
-
-<!-- Reviews section -->
-<div class="reviews" id="reviews">
-    <h1>join me on a culinary adventure!</h1>
-    
-    <div class="search-container">
-        <input type="text" id="search" placeholder="search for restaurants...">
-        <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        
-        <div class="filter-dropdown">
-            <button id="filter-button"><i class="fa-solid fa-filter"></i> filter</button>
-            
-            <div class="filter-options">
-                <select name="country" id="country-filter">
-                    <option value="">Country</option>
-                </select>
-                <select name="cuisine" id="cuisine-filter">
-                    <option value="">Cuisine</option>
-                </select>
-                <select name="rating" id="rating-filter">
-                    <option value="">Rating</option>
-                </select>
-                <select name="price" id="price-filter">
-                    <option value="">Price</option>
-                </select>
-                <button id="clear-filters">Clear Filters</button>
+        <div class="container">
+            <div class="map-container">
+                <img src="about/worldmapv2.png" alt="World Map" class="map">
+            </div>
+            <div class="box">
+                <p id="review">
+                    <span class="big-num" id="review-count">0</span> reviews <br> across <span class="big-num"
+                        id="country-count">0</span> countries
+                </p>
             </div>
         </div>
     </div>
 
-    <div class="grid"></div>
-    <div class="no-results">that's uncharted territory on my food map!<br><i class="fa-solid fa-map-location-dot"></i><br>try another spot.</div>
-</div>
+    <!-- Reviews section -->
+    <div class="reviews" id="reviews">
+        <h1>join me on a culinary adventure!</h1>
 
-<!-- Modal structure -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close"></span>
-        <div class="box">
-            <div class="modal-slideshow"></div>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="search for restaurants...">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+            <div class="filter-dropdown">
+                <button id="filter-button"><i class="fa-solid fa-filter"></i> filter</button>
+
+                <div class="filter-options">
+                    <select name="country" id="country-filter">
+                        <option value="">Country</option>
+                    </select>
+                    <select name="cuisine" id="cuisine-filter">
+                        <option value="">Cuisine</option>
+                    </select>
+                    <select name="rating" id="rating-filter">
+                        <option value="">Rating</option>
+                    </select>
+                    <select name="price" id="price-filter">
+                        <option value="">Price</option>
+                    </select>
+                    <button id="clear-filters">Clear Filters</button>
+                </div>
+            </div>
         </div>
-        <div class="box" style="margin-left: 5vw; margin-right: 2vw;">
-            <h2 id="modal-title"></h2>
-            <p><span id="modal-rating" style="color:#F5BD47"></span> | <span id="modal-price" style="color: rgb(8, 131, 90)"></span></p>
-            <p><span id="modal-cuisine"></span> restaurant in <span id="modal-city"></span>, <span id="modal-country"></span></p>
-        <br><p id="modal-review"></p>
-        </div>
+
+        <div class="grid"></div>
+        <div class="no-results">that's uncharted territory on my food map!<br><i
+                class="fa-solid fa-map-location-dot"></i><br>try another spot.</div>
     </div>
-</div>
 
-<!-- Suggestions section -->
-<div class="suggestions" id="suggestions">
-    <h1>next on my plate: your recommendations!</h1>
-    <div class="container">
-        <div class="image-container">
-            <svg width="120%" height="120%" viewBox="0 0 100 100">
-                <defs>
-                    <pattern id="bigul" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="suggestions/bigul.png" x="0" y="0" width="100" height="100"></image>
-                    </pattern>
-                    <pattern id="bigul-hover" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="suggestions/bigul-hover.png" x="0" y="0" width="100" height="100"></image>
-                    </pattern>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#bigul)" class="pixel-art-circle" data-hover-fill="url(#bigul-hover)"></circle>
-            </svg>
-            <svg width="120%" height="120%" viewBox="0 0 100 100">
-                <defs>
-                    <pattern id="tumpeng" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="suggestions/tumpeng.png" x="0" y="0" width="100" height="100"></image>
-                    </pattern>
-                    <pattern id="tumpeng-hover" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="suggestions/tumpeng-hover.png" x="0" y="0" width="100" height="100"></image>
-                    </pattern>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#tumpeng)" class="pixel-art-circle" data-hover-fill="url(#tumpeng-hover)"></circle>
-            </svg>
-            <svg width="120%" height="120%" viewBox="0 0 100 100">
-                <defs>
-                    <pattern id="soto" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="suggestions/soto.png" x="0" y="0" width="100" height="100"></image>
-                    </pattern>
-                    <pattern id="soto-hover" patternUnits="userSpaceOnUse" width="100" height="100">
-                        <image href="suggestions/soto-hover.png" x="0" y="0" width="100" height="100"></image>
-                    </pattern>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#soto)" class="pixel-art-circle" data-hover-fill="url(#soto-hover)"></circle>
-            </svg>
+    <!-- Modal structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close"></span>
+            <div class="box">
+                <div class="modal-slideshow"></div>
+            </div>
+            <div class="box" style="margin-left: 5vw; margin-right: 2vw;">
+                <h2 id="modal-title"></h2>
+                <p><span id="modal-rating" style="color:#F5BD47"></span> | <span id="modal-price"
+                        style="color: rgb(8, 131, 90)"></span></p>
+                <p><span id="modal-cuisine"></span> restaurant in <span id="modal-city"></span>, <span
+                        id="modal-country"></span></p>
+                <br>
+                <p id="modal-review"></p>
+            </div>
         </div>
     </div>
-    <p>what should i try next?</p>
-    <input type="text" id="user-suggestion" placeholder="enter your suggestion here..."> 
-    <button id="send-suggestion">send</button>
-    <p id="thank-you-message" style="display:none;">thanks for your suggestion!</p>
-</div>
 
-<!-- Contact section -->
-<div class="contact" id="contact">
-    <h1>lettuce connect!</h1>
-    <div class=box>
-        <a href="https://www.linkedin.com/in/catherinesutanto" target="_blank">
-            <i class="fa-brands fa-linkedin" style="font-size: 4vw;"></i>
-        </a>
-        <a href="https://github.com/catherinencs" target="_blank" style="margin-left: 3vw;">
-            <i class="fa-brands fa-github" style="font-size: 4vw;"></i>
-        </a>
-        <a href="mailto:catherinencsutanto@gmail.com" target="_blank" style="margin-left: 3vw;">
-            <i class="fa-solid fa-envelope" style="font-size: 4vw;"></i>
-        </a>
+    <!-- Suggestions section -->
+    <div class="suggestions" id="suggestions">
+        <h1>next on my plate: your recommendations!</h1>
+        <div class="container">
+            <div class="image-container">
+                <svg width="120%" height="120%" viewBox="0 0 100 100">
+                    <defs>
+                        <pattern id="bigul" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="suggestions/bigul.png" x="0" y="0" width="100" height="100"></image>
+                        </pattern>
+                        <pattern id="bigul-hover" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="suggestions/bigul-hover.png" x="0" y="0" width="100" height="100"></image>
+                        </pattern>
+                    </defs>
+                    <circle cx="50" cy="50" r="50" fill="url(#bigul)" class="pixel-art-circle"
+                        data-hover-fill="url(#bigul-hover)"></circle>
+                </svg>
+                <svg width="120%" height="120%" viewBox="0 0 100 100">
+                    <defs>
+                        <pattern id="tumpeng" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="suggestions/tumpeng.png" x="0" y="0" width="100" height="100"></image>
+                        </pattern>
+                        <pattern id="tumpeng-hover" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="suggestions/tumpeng-hover.png" x="0" y="0" width="100" height="100"></image>
+                        </pattern>
+                    </defs>
+                    <circle cx="50" cy="50" r="50" fill="url(#tumpeng)" class="pixel-art-circle"
+                        data-hover-fill="url(#tumpeng-hover)"></circle>
+                </svg>
+                <svg width="120%" height="120%" viewBox="0 0 100 100">
+                    <defs>
+                        <pattern id="soto" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="suggestions/soto.png" x="0" y="0" width="100" height="100"></image>
+                        </pattern>
+                        <pattern id="soto-hover" patternUnits="userSpaceOnUse" width="100" height="100">
+                            <image href="suggestions/soto-hover.png" x="0" y="0" width="100" height="100"></image>
+                        </pattern>
+                    </defs>
+                    <circle cx="50" cy="50" r="50" fill="url(#soto)" class="pixel-art-circle"
+                        data-hover-fill="url(#soto-hover)"></circle>
+                </svg>
+            </div>
+        </div>
+        <p>what should i try next?</p>
+        <input type="text" id="user-suggestion" placeholder="enter your suggestion here...">
+        <button id="send-suggestion">send</button>
+        <p id="thank-you-message" style="display:none;">thanks for your suggestion!</p>
     </div>
-</div>
 
-<script src="scripts.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Contact section -->
+    <div class="contact" id="contact">
+        <h1>lettuce connect!</h1>
+        <div class=box>
+            <a href="https://www.linkedin.com/in/catherinesutanto" target="_blank">
+                <i class="fa-brands fa-linkedin" style="font-size: 4vw;"></i>
+            </a>
+            <a href="https://github.com/catherinencs" target="_blank" style="margin-left: 3vw;">
+                <i class="fa-brands fa-github" style="font-size: 4vw;"></i>
+            </a>
+            <a href="mailto:catherinencsutanto@gmail.com" target="_blank" style="margin-left: 3vw;">
+                <i class="fa-solid fa-envelope" style="font-size: 4vw;"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </body>
+
 </html>

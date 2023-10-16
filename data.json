@@ -15,7 +15,7 @@
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
-        "title": "Katzs Delicatessen",
+        "title": "Katz's Delicatessen",
         "rating": "★★★★★",
         "price": "$$",
         "imgsrcs": [
@@ -61,7 +61,7 @@
         "city": "London",
         "country": "UK",
         "cuisine": "Indian",
-        "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
+        "review": "This burger is absolutely haha's delicious with juicy meat and fresh ingredients."
     },
     {
         "title": "Omoide Yokocho",
@@ -79,7 +79,7 @@
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     },
     {
-        "title": "Mings Seafood",
+        "title": "Ming's Seafood",
         "rating": "★★★★☆",
         "price": "$$",
         "imgsrcs": [
@@ -130,4 +130,3 @@
         "review": "This burger is absolutely delicious with juicy meat and fresh ingredients."
     }
 ]
-    

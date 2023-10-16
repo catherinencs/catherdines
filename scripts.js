@@ -1,11 +1,11 @@
 const gridContainer = document.querySelector('.grid');
 
 const countryCoordinates = {
-    'USA': { left: '40%', top: '30%'},
-    'Japan': { left: '88%', top: '39%'},
-    'Indonesia': { left: '85%', top: '58%'},
-    'Singapore': { left: '81.1%', top: '56.5%'},
-    'UK': { left: '59.5%', top: '28%'}
+    'USA': { left: '40%', top: '30%' },
+    'Japan': { left: '88%', top: '39%' },
+    'Indonesia': { left: '85%', top: '58%' },
+    'Singapore': { left: '81.1%', top: '56.5%' },
+    'UK': { left: '59.5%', top: '28%' }
 };
 
 /**
@@ -14,7 +14,7 @@ const countryCoordinates = {
 function fetchGridData() {
     fetch('data.json')
         .then(response => response.json())
-        
+
         .then(processGridData)
         .catch(error => {
             console.error("Failed to fetch data:", error);
@@ -48,7 +48,7 @@ function processGridData(grids) {
 function renderGridItems(grids) {
     const gridItemsHTML = grids.map(grid => `
     <div class="grid-item" 
-    data-json='${JSON.stringify(grid)}'
+    data-json="${JSON.stringify(grid).replace(/"/g, '&quot;')}"
     data-country="${grid.country}" 
     data-cuisine="${grid.cuisine}" 
     data-rating="${grid.rating}" 
@@ -78,9 +78,9 @@ function setupModalInteractions() {
     const closeModalBtn = document.querySelector(".close");
 
     document.querySelectorAll(".grid-item").forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             const gridData = JSON.parse(this.getAttribute('data-json'));
-            
+
             modalRating.textContent = gridData.rating;
             modalTitle.textContent = gridData.title;
             modalReview.textContent = gridData.review;
@@ -211,7 +211,7 @@ function setupFiltersAndSearch(grids) {
         element.addEventListener(eventListeners[index < 5 ? 0 : index - 4], filterGridItems);
     });
 
-    document.getElementById('clear-filters').addEventListener('click', function() {
+    document.getElementById('clear-filters').addEventListener('click', function () {
         countryFilter.selectedIndex = 0;
         cuisineFilter.selectedIndex = 0;
         ratingFilter.selectedIndex = 0;
@@ -296,13 +296,13 @@ function filterGridItems() {
         const itemTitle = item.querySelector('h2').textContent.toLowerCase();
         const matchesSearch = !searchTerm || itemTitle.includes(searchTerm);
 
-        if (matchesFilter(item, 'country', country) && 
-            matchesFilter(item, 'cuisine', cuisine) && 
-            matchesFilter(item, 'rating', rating) && 
+        if (matchesFilter(item, 'country', country) &&
+            matchesFilter(item, 'cuisine', cuisine) &&
+            matchesFilter(item, 'rating', rating) &&
             matchesFilter(item, 'price', price) &&
             matchesSearch) {
-                item.classList.add('active');
-                hasActiveItems = true;
+            item.classList.add('active');
+            hasActiveItems = true;
         } else {
             item.classList.remove('active');
         }
@@ -325,10 +325,10 @@ function toggleNoResultsMessage(hasActiveItems) {
  */
 function setupAvatarHoverEffect() {
     const avatar = document.getElementById('avatar');
-    avatar.addEventListener('mouseover', function() {
+    avatar.addEventListener('mouseover', function () {
         this.setAttribute('fill', 'url(#img2)');
     });
-    avatar.addEventListener('mouseout', function() {
+    avatar.addEventListener('mouseout', function () {
         this.setAttribute('fill', 'url(#img1)');
     });
 }
@@ -359,7 +359,14 @@ const suggestionInput = document.getElementById('user-suggestion');
 const thankYouMessage = document.getElementById('thank-you-message');
 
 // Add the event listener to the send button
-sendButton.addEventListener('click', function() {
+sendButton.addEventListener('click', function () {
+    // Check if the input is empty or only contains whitespace
+    if (suggestionInput.value.trim() === '') {
+        // Do nothing or show a warning to the user
+        alert("can't dish out an empty plate!");
+        return;
+    }
+
     // Hide the input and the send button
     suggestionInput.style.display = 'none';
     sendButton.style.display = 'none';
@@ -368,16 +375,16 @@ sendButton.addEventListener('click', function() {
     thankYouMessage.style.display = 'block';
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const pixelArts = document.querySelectorAll('.pixel-art-circle');
 
     pixelArts.forEach(circle => {
-        circle.addEventListener('mouseover', function() {
+        circle.addEventListener('mouseover', function () {
             this.setAttribute('data-original-fill', this.getAttribute('fill'));
             this.setAttribute('fill', this.getAttribute('data-hover-fill'));
         });
 
-        circle.addEventListener('mouseout', function() {
+        circle.addEventListener('mouseout', function () {
             this.setAttribute('fill', this.getAttribute('data-original-fill'));
         });
     });

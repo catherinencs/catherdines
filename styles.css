@@ -11,7 +11,7 @@ button {
     border: none;
     font-size: 1rem;
     padding: 0rem;
-    color:#563110;
+    color: #563110;
     transition: color 0.2s;
 }
 
@@ -35,19 +35,19 @@ button:hover {
 }
 
 .box a {
-    color: white; 
+    color: white;
     text-decoration: none;
 }
 
 /* Navigation Bar */
 nav {
-    background-color: #EFD9CA; 
+    background-color: #EFD9CA;
     border-bottom: 0.15vw solid rgb(0, 0, 0);
-    overflow: hidden; 
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000; 
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -58,20 +58,20 @@ nav ul {
 }
 
 nav ul li {
-    list-style-type: none; 
+    list-style-type: none;
 }
 
 nav a {
-    display: block; 
-    color: rgb(8, 131, 90); 
-    text-align: center; 
-    padding: 1vw 5vw; 
-    text-decoration: none; 
+    display: block;
+    color: rgb(8, 131, 90);
+    text-align: center;
+    padding: 1vw 5vw;
+    text-decoration: none;
     font-size: 1em;
 }
 
 nav a:hover {
-    color: #F06D4E; 
+    color: #F06D4E;
 }
 
 /* INTRODUCTION SECTION */
@@ -85,10 +85,10 @@ nav a:hover {
 }
 
 .introduction h1 {
-    color: #EFD9CA; 
+    color: #EFD9CA;
     text-align: center;
     font-size: 5em;
-    margin: 0; 
+    margin: 0;
 }
 
 .introduction p {
@@ -109,20 +109,20 @@ nav a:hover {
 }
 
 .big-num {
-    font-size: 4vw; 
-    color: #EFD9CA; 
+    font-size: 4vw;
+    color: #EFD9CA;
 }
 
 /* Avatar */
 .avatar {
     position: relative;
-    width: 30vw;  
+    width: 30vw;
 }
 
 .avatar img {
     position: absolute;
     width: 100%;
-    height: auto; 
+    height: auto;
     transition: opacity 0.5s;
 }
 
@@ -163,13 +163,13 @@ nav a:hover {
     width: 2vw;
     height: 2vw;
     background: url('about/markerv2.png') no-repeat center center;
-    background-size: contain; 
+    background-size: contain;
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
 
 .marker:hover {
-    background-image: url(about/marker-hover.png);  
+    background-image: url(about/marker-hover.png);
 }
 
 .tooltip {
@@ -177,19 +177,19 @@ nav a:hover {
     background-color: #FADBD3;
     border: 0.05vw solid rgb(0, 0, 0);
     border-radius: 5px;
-    white-space: nowrap; 
-    left: 100%; 
-    top: 50%; 
+    white-space: nowrap;
+    left: 100%;
+    top: 50%;
     transform: translateY(-50%);
-    margin-left: 10px; 
+    margin-left: 10px;
     display: flex;
-    align-items: center;    
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
     padding: 1vw;
 }
 
 #tooltip {
-    font-size: 1vw; 
+    font-size: 1vw;
     color: #EA7A7A;
     margin: 0;
     padding: 0vw;
@@ -198,9 +198,9 @@ nav a:hover {
 /* REVIEWS SECTION */
 .reviews {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    text-align: center; 
+    text-align: center;
     background-color: #F06D4E;
     color: #EAD3C3;
     padding: 3rem 2rem 5rem 2rem;
@@ -223,7 +223,8 @@ nav a:hover {
 .no-results {
     text-align: center;
     font-size: 2vw;
-    display: none; /* Initially hidden */
+    display: none;
+    /* Initially hidden */
     color: black;
     background-color: #F06D4E;
     padding-top: 2rem;
@@ -251,7 +252,7 @@ nav a:hover {
 }
 
 input::placeholder {
-    color: #563110; 
+    color: #563110;
     opacity: 70%;
     font-style: italic;
 }
@@ -290,7 +291,7 @@ input::placeholder {
     background-color: #EFD9CA;
     border: 0.15vw solid black;
     border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1;
     flex-direction: row;
     padding: 2rem;
@@ -309,7 +310,7 @@ input::placeholder {
 
 .filter-options select:hover {
     background-color: #EFD9CA;
-    color:#F06D4E;
+    color: #F06D4E;
 }
 
 /* Grids (Reviews) */
@@ -332,8 +333,8 @@ input::placeholder {
     margin: 1vw;
     font-size: 2vw;
     background-color: #F5B9A9;
-    margin: 0vw;   
-    width: 100%; 
+    margin: 0vw;
+    width: 100%;
     text-align: center;
     border-bottom: 0.15vw solid black;
     text-decoration: none;
@@ -359,12 +360,12 @@ input::placeholder {
 }
 
 .grid-item {
-    display: none; 
+    display: none;
     flex-direction: column;
     background-color: #EDD7C8;
     border: 0.15vw solid rgb(0, 0, 0);
     align-items: center;
-    padding:0;
+    padding: 0;
     padding-bottom: 1vw;
     width: 30vw;
     min-width: 300px;
@@ -389,9 +390,9 @@ input::placeholder {
 /* SUGGESTIONS SECTION */
 .suggestions {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    text-align: center; 
+    text-align: center;
     padding: 3rem 2rem 4rem 2rem;
     border-bottom: 1vw solid #EFD9CA;
     background-color: #EFB648;
@@ -441,9 +442,9 @@ input::placeholder {
 /* CONTACT SECTION */
 .contact {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    text-align: center; 
+    text-align: center;
     padding: 2rem 2rem 4rem 2rem;
     font-size: 1em;
     background-color: rgb(8, 131, 211);
@@ -452,16 +453,16 @@ input::placeholder {
 
 /* Modal Format */
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-slideshow {
@@ -486,9 +487,9 @@ input::placeholder {
 }
 
 .slick-next:before {
-    color: grey !important;  
+    color: grey !important;
 }
 
 .slick-prev:before {
-    color: grey !important;  
+    color: grey !important;
 }
