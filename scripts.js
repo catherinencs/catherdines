@@ -1,11 +1,11 @@
 const gridContainer = document.querySelector('.grid');
 
 const countryCoordinates = {
-    'USA': { left: '17%', top: '30%' },
-    'Japan': { left: '76.5%', top: '41%' },
-    'Indonesia': { left: '74%', top: '62%' },
-    'Singapore': { left: '67.5%', top: '57.5%' },
-    'UK': { left: '42%', top: '29%' }
+    'Indonesia': { left: '78.5%', top: '62%' },
+    'Singapore': { left: '72%', top: '57.5%' },
+    'UK': { left: '46.5%', top: '29%' },
+    'USA': { left: '21.5%', top: '30%' },
+    'Japan': { left: '81%', top: '41%' }
 };
 
 /**

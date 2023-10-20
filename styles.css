@@ -88,7 +88,7 @@ button:hover {
 
 .section {
     background-color: #EFD9CA;
-    padding: 3rem 2rem 4rem 2rem;
+    padding: 3.5vw 2vw 4vw 2vw;
     border-bottom: 1vw solid #EFD9CA;
 }
 
@@ -108,6 +108,40 @@ button:hover {
     #about h1 {
         font-size: 12vw;
     }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    #about p, #about p.right-aligned {
+        text-align: center !important;
+        padding: 0 2vw 0 2vw !important;
+
+    }
+
+    .section {
+        padding-top: 7vw;
+    }
+
+    .tooltip {
+        position: absolute;
+        background-color: #FADBD3;
+        border: 0.05vw solid rgb(0, 0, 0);
+        border-radius: 5px;
+        white-space: nowrap;
+        left: -100% !important;
+        top: 200% !important;
+        transform: translateY(-50%);
+        margin-left: 10px;
+        padding: 0.5rem;  /* Add some padding */
+        z-index: 2 !important;
+
+    }
+    
 }
 
 #about p {
@@ -176,6 +210,7 @@ button:hover {
 .map-container {
     display: flex;
     position: relative;
+    justify-content: center;
 }
 
 .map {
