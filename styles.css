@@ -1,44 +1,3 @@
-body {
-    padding-top: 10px;
-    font-family: futura, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #EFD9CA;
-}
-
-button {
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
-    padding: 0rem;
-    color: #563110;
-    transition: color 0.2s;
-}
-
-input:focus {
-    outline: none;
-}
-
-button:hover {
-    color: #F06D4E;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px;
-}
-
-.container .box {
-    flex: 1;
-    align-items: center;
-}
-
-.box a {
-    color: white;
-    text-decoration: none;
-}
-
 /* Navigation Bar */
 nav {
     background-color: #EFD9CA;
@@ -74,44 +33,132 @@ nav a:hover {
     color: #F06D4E;
 }
 
-/* INTRODUCTION SECTION */
-.introduction {
-    padding-top: 3.5rem;
+body {
+    padding-top: 10px;
+    font-family: futura, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EFD9CA;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    vertical-align: center;
+}
+
+p {
+    margin: 0;
+    text-align: left;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    padding: 0rem;
+    color: #563110;
+    transition: color 0.2s;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:hover {
+    color: #F06D4E;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    align-items: center;
+}
+
+.container .box {
+    flex: 1;
+}
+
+.box a {
+    color: white;
+    text-decoration: none;
+}
+
+.section {
+    background-color: #EFD9CA;
+    padding: 3rem 2rem 4rem 2rem;
+    border-bottom: 1vw solid #EFD9CA;
+}
+
+#about {
     background-color: rgb(8, 131, 90);
     color: rgb(205, 232, 217);
-    border-bottom: 1vw solid #EFD9CA;
-    padding-bottom: 4rem;
-
 }
 
-.introduction h1 {
+
+#about h1 {
     color: #EFD9CA;
     text-align: center;
-    font-size: 7vw;
-    margin: 0;
+    font-size: 6rem;
 }
 
-.introduction p {
-    text-align: left;
-    font-size: 2vw;
+@media (max-width: 750px) {
+    #about h1 {
+        font-size: 12vw;
+    }
+}
+
+#about p {
+    font-size: calc(max(2vw, 15px));
     padding: 0vw 9vw 2vw 3.5vw;
 }
 
-.introduction p.right-aligned {
+#about p.right-aligned {
     text-align: right;
     padding: 0vw 3.5vw 2vw 9vw;
 }
 
-#review {
+#about p.review {
     text-align: center;
-    padding: 0vw 8vw 1vw 0vw;
     font-size: 3vw;
+    padding: 0;
+}
+
+#about img {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    max-width: 90%;
+    height: auto;
+}
+
+.container .interactivetext {
+    margin: 0;
+    max-width: 22rem;
 }
 
 .big-num {
-    font-size: 4vw;
     color: #EFD9CA;
+    font-size: 4vw;
 }
+
+/* REVIEWS SECTION */
+#reviews {
+    background-color: #F06D4E;
+    color: white;
+}
+
+#reviews h1 {
+    margin-top: 0.5rem;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 2rem;
+    display: none;
+}
+
 
 /* Avatar */
 .avatar {
@@ -121,51 +168,31 @@ nav a:hover {
 
 .avatar img {
     position: absolute;
-    width: 100%;
-    height: auto;
     transition: opacity 0.5s;
 }
 
-.avatar .original-avatar {
-    opacity: 1;
-}
-
-.avatar .hover-avatar {
-    opacity: 0;
-}
-
-.avatar:hover .original-avatar {
-    opacity: 0;
-}
-
-.avatar:hover .hover-avatar {
-    opacity: 1;
-}
 
 /* Map and Tooltip */
 .map-container {
     display: flex;
     position: relative;
-    justify-content: space-between;
-    padding: 0vw 0vw 1vw 13vw;
-    max-width: 600px;
-    margin: auto;
 }
 
 .map {
-    width: 40vw;
+    width: 40rem;
     height: auto;
     display: block;
 }
 
 .marker {
     position: absolute;
-    width: 2vw;
-    height: 2vw;
+    width: 2rem;
+    height: 2rem;
     background: url('about/markerv2.png') no-repeat center center;
     background-size: contain;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    z-index: 1 !important;
 }
 
 .marker:hover {
@@ -182,53 +209,18 @@ nav a:hover {
     top: 50%;
     transform: translateY(-50%);
     margin-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1vw;
+    padding: 0.5rem;  /* Add some padding */
+    z-index: 2 !important;
+
 }
 
-#tooltip {
-    font-size: 1vw;
+.tooltip p {
+    font-size: 0.8rem !important;
     color: #EA7A7A;
     margin: 0;
-    padding: 0vw;
+    padding: 0 !important;
 }
 
-/* REVIEWS SECTION */
-.reviews {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #F06D4E;
-    color: #EAD3C3;
-    padding: 3rem 2rem 5rem 2rem;
-    border-bottom: 1vw solid #EFD9CA;
-}
-
-.reviews h1 {
-    font-size: 2em;
-    margin: 0;
-    margin-top: 0.5em;
-    color: white;
-}
-
-.reviews p {
-    font-size: 2em;
-    margin: 0;
-    color: #563110;
-}
-
-.no-results {
-    text-align: center;
-    font-size: 2vw;
-    display: none;
-    /* Initially hidden */
-    color: black;
-    background-color: #F06D4E;
-    padding-top: 2rem;
-}
 
 /* Search Bar */
 .search-container {
@@ -388,19 +380,15 @@ input::placeholder {
 }
 
 /* SUGGESTIONS SECTION */
-.suggestions {
+#suggestions {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 3rem 2rem 4rem 2rem;
-    border-bottom: 1vw solid #EFD9CA;
     background-color: #EFB648;
     color: #5D3403;
-    font-size: 1em;
 }
 
-.suggestions p {
+#suggestions p {
     font-size: 1.4em;
     padding-bottom: 1em;
 }
@@ -440,13 +428,8 @@ input::placeholder {
 
 
 /* CONTACT SECTION */
-.contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#contact {
     text-align: center;
-    padding: 2rem 2rem 4rem 2rem;
-    font-size: 1em;
     background-color: rgb(8, 131, 211);
     color: white;
 }
@@ -455,7 +438,6 @@ input::placeholder {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -480,10 +462,6 @@ input::placeholder {
     max-height: 75%;
     display: flex;
     justify-content: space-between;
-}
-
-.modal img {
-    width: 50%;
 }
 
 .slick-next:before {

@@ -132,5 +132,19 @@
         "country": "Singapore",
         "cuisine": "Japanese",
         "review": "Discovered this tucked-away gem and was thoroughly impressed! The sashimi was incredibly fresh, and for the quality, it's truly bang for your buck. The ambiance is simple, adding to its charm. I'll definitely be returning for another delightful experience. Highly recommend!"
+    },
+    {
+        "title": "Tsukiji",
+        "rating": "★★★★☆",
+        "price": "$$",
+        "imgsrcs": [
+            "img/ageya/ageya-02.png",
+            "img/ageya/ageya-03.png",
+            "img/ageya/ageya-01.png"
+        ],
+        "city": "Singapore",
+        "country": "Singapore",
+        "cuisine": "Japanese",
+        "review": "Discovered this tucked-away gem and was thoroughly impressed! The sashimi was incredibly fresh, and for the quality, it's truly bang for your buck. The ambiance is simple, adding to its charm. I'll definitely be returning for another delightful experience. Highly recommend!"
     }
 ]

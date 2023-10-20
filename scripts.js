@@ -1,11 +1,11 @@
 const gridContainer = document.querySelector('.grid');
 
 const countryCoordinates = {
-    'USA': { left: '40%', top: '30%' },
-    'Japan': { left: '88%', top: '39%' },
-    'Indonesia': { left: '85%', top: '58%' },
-    'Singapore': { left: '81.1%', top: '56.5%' },
-    'UK': { left: '59.5%', top: '28%' }
+    'USA': { left: '17%', top: '30%' },
+    'Japan': { left: '76.5%', top: '41%' },
+    'Indonesia': { left: '74%', top: '62%' },
+    'Singapore': { left: '67.5%', top: '57.5%' },
+    'UK': { left: '42%', top: '29%' }
 };
 
 /**
@@ -169,7 +169,7 @@ function createTooltip(country, count) {
     const tooltip = document.createElement('div');
     tooltip.classList.add('tooltip');
     tooltip.style.display = 'none';
-    tooltip.innerHTML = `<p id="tooltip">${country}</p><p id="tooltip">Reviews: ${count}</p>`;
+    tooltip.innerHTML = `<p class="tooltip-text">${country}</p><p class="tooltip-text">Reviews: ${count}</p>`; 
     return tooltip;
 }
 
