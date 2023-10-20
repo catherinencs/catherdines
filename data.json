@@ -134,17 +134,18 @@
         "review": "Discovered this tucked-away gem and was thoroughly impressed! The sashimi was incredibly fresh, and for the quality, it's truly bang for your buck. The ambiance is simple, adding to its charm. I'll definitely be returning for another delightful experience. Highly recommend!"
     },
     {
-        "title": "Tsukiji",
-        "rating": "★★★★☆",
+        "title": "Chome",
+        "rating": "★★★☆☆",
         "price": "$$",
         "imgsrcs": [
-            "img/ageya/ageya-02.png",
-            "img/ageya/ageya-03.png",
-            "img/ageya/ageya-01.png"
+            "img/chome/chome-01.png",
+            "img/chome/chome-02.png",
+            "img/chome/chome-03.png",
+            "img/chome/chome-04.png"
         ],
-        "city": "Singapore",
-        "country": "Singapore",
+        "city": "San Francisco",
+        "country": "USA",
         "cuisine": "Japanese",
-        "review": "Discovered this tucked-away gem and was thoroughly impressed! The sashimi was incredibly fresh, and for the quality, it's truly bang for your buck. The ambiance is simple, adding to its charm. I'll definitely be returning for another delightful experience. Highly recommend!"
+        "review": "Chome nails the yakitori game! Every skewer I tried was like a mini trip to Japan, packed with flavor and grilled just right, smoky and delicious. They've got a bunch of options, and I kinda wanted to try them all! Heads up,  though, it's super cramped and busy. Chome's not just serving food; it's like a slice of Japan on a plate!"
     }
 ]

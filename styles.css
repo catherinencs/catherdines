@@ -110,36 +110,6 @@ button:hover {
     }
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
-    .container {
-        flex-direction: column;
-        padding-bottom: 5vw;
-    }
-
-    .container .box {
-        padding-top: 3vw;
-        padding-bottom: 3vw;
-    }
-
-    #about p, #about p.right-aligned {
-        text-align: center !important;
-        padding: 0 2vw 0 2vw !important;
-
-    }
-
-    .section {
-        padding-top: 7vw;
-    }
-
-    .tooltip {
-        left: -100% !important;
-        top: 200% !important;
-    }
-    
-}
-
 #about p {
     font-size: calc(max(2vw, 15px));
     padding: 0vw 9vw 2vw 3.5vw;
@@ -171,6 +141,40 @@ button:hover {
 .big-num {
     color: #EFD9CA;
     font-size: 4vw;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .container {
+        flex-direction: column;
+        padding-bottom: 5vw;
+    }
+
+    .container .box {
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+    }
+
+    #about p, #about p.right-aligned {
+        text-align: center !important;
+        padding: 0 2vw 0 2vw !important;
+
+    }
+
+    .section {
+        padding-top: 7vw;
+    }
+
+    .tooltip {
+        left: -100% !important;
+        top: 200% !important;
+    }
+
+    #about p, #about p.review, .big-num {
+        font-size: 1.2rem;
+    }
+    
 }
 
 /* REVIEWS SECTION */
@@ -323,7 +327,7 @@ input::placeholder {
     color: white;
     border: none;
     padding: 5px 10px;
-    font-size: 1em;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -331,6 +335,19 @@ input::placeholder {
 .filter-options select:hover {
     background-color: #EFD9CA;
     color: #F06D4E;
+}
+
+@media (max-width: 850px) {
+    .filter-options {
+        flex-direction: column;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .no-results, p.thank-you-message {
+        font-size: 1rem;
+    }    
 }
 
 /* Grids (Reviews) */
@@ -493,7 +510,18 @@ input::placeholder {
     overflow: scroll;
 }
 
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 1rem;
+    font-weight: bold;
+}
 
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .slick-next:before {
     color: grey !important;
