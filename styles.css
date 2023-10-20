@@ -433,6 +433,10 @@ input::placeholder {
     color: #5D3403;
 }
 
+#suggestions h1 {
+    padding-top: 1vw;
+}
+
 #suggestions p {
     font-size: 1.4em;
     padding-bottom: 1em;

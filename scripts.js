@@ -37,8 +37,8 @@ function processGridData(grids) {
     const countryCount = getUniqueValues(grids, 'country').length;
 
     // Animate the counts
-    animateValue(document.getElementById('review-count'), 0, reviewCount, 500);
-    animateValue(document.getElementById('country-count'), 0, countryCount, 500);
+    animateValue(document.getElementById('review-count'), 0, reviewCount, 800);
+    animateValue(document.getElementById('country-count'), 0, countryCount, 800);
 }
 
 /**
